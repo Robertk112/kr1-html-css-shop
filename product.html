@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Товар 1: описание, характеристики и цена.">
+  <title>Товар 1 — Учебный интернет-магазин</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Товар 1 — Учебный интернет-магазин">
+  <meta property="og:description" content="Товар 1: описание, характеристики и цена.">
+  <meta property="og:image" content="https://wqlwr.github.io/kr1-html-css-shop/images/preview.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__separator">/</span>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__separator">/</span>
+      <span class="breadcrumbs__current">Товар 1</span>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- Подробная карточка товара                   -->
+    <!-- ========================================== -->
+    <section class="product-details">
+
+      <!-- Галерея -->
+      <div class="product-details__gallery">
+        <img class="product-details__image"
+             id="product-main-image"
+             src="images/1.png"
+             alt="Изображение товара 1"
+             width="480"
+             height="360">
+
+        <ul class="product-details__thumbs">
+          <li class="product-details__thumb product-details__thumb--active">
+            <img src="images/1.png" alt="Миниатюра 1">
+          </li>
+          <li class="product-details__thumb">
+            <img src="images/2.png" alt="Миниатюра 2">
+          </li>
+          <li class="product-details__thumb">
+            <img src="images/3.png" alt="Миниатюра 3">
+          </li>
+          <li class="product-details__thumb">
+            <img src="images/4.png" alt="Миниатюра 4">
+          </li>
+        </ul>
+      </div>
+
+      <!-- Информация -->
+      <div class="product-details__info">
+
+        <div class="product-details__badges">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+        </div>
+
+        <h1 class="product-details__title">Товар 1</h1>
+
+        <p class="product-details__sku">Артикул: SKU-0001</p>
+
+        <div class="product-details__rating" aria-label="Рейтинг 4.8 из 5">
+          <span class="product-details__stars" aria-hidden="true">★★★★★</span>
+          <span class="product-details__rating-value">4.8</span>
+          <span class="product-details__reviews">(42 отзыва)</span>
+        </div>
+
+        <p class="product-details__description">
+          Подробная информация о товаре 1: описание, назначение, особенности и условия заказа.
+          Учебный товар для демонстрации подробной карточки.
+        </p>
+
+        <!-- Цена -->
+        <div class="product-details__price-block">
+          <p class="product-details__price">1 000 руб.</p>
+          <p class="product-details__old-price">1 200 руб.</p>
+          <p class="product-details__discount">Скидка 17%</p>
+        </div>
+
+        <!-- Наличие -->
+        <div class="product-details__stock">
+          <span class="product-details__stock-status product-details__stock-status--in">В наличии</span>
+          <span class="product-details__stock-count">Осталось 12 шт.</span>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="product-details__actions">
+          <button class="button button--primary product-details__button product-card__button"
+                  type="button"
+                  data-product="Товар 1">
+            Заказать
+          </button>
+          <a class="button button--secondary product-details__button" href="order.html">
+            Оставить заявку
+          </a>
+        </div>
+
+        <!-- Короткие характеристики -->
+        <dl class="product-details__short-specs">
+          <div class="product-details__spec-row">
+            <dt>Категория</dt>
+            <dd>Учебный товар</dd>
+          </div>
+          <div class="product-details__spec-row">
+            <dt>Срок получения</dt>
+            <dd>1–3 дня</dd>
+          </div>
+          <div class="product-details__spec-row">
+            <dt>Гарантия</dt>
+            <dd>12 месяцев</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- Подробные характеристики                    -->
+    <!-- ========================================== -->
+    <section class="section">
+      <h2 class="section__title">Характеристики</h2>
+
+      <table class="product-table">
+        <caption>Характеристики товара 1</caption>
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Категория</td>
+            <td>Учебный товар</td>
+          </tr>
+          <tr>
+            <td>Цена</td>
+            <td>1 000 руб.</td>
+          </tr>
+          <tr>
+            <td>Наличие</td>
+            <td>В наличии</td>
+          </tr>
+          <tr>
+            <td>Срок получения</td>
+            <td>1–3 дня</td>
+          </tr>
+          <tr>
+            <td>Гарантия</td>
+            <td>12 месяцев</td>
+          </tr>
+          <tr>
+            <td>Производитель</td>
+            <td>Учебный производитель</td>
+          </tr>
+          <tr>
+            <td>Страна производства</td>
+            <td>Россия</td>
+          </tr>
+          <tr>
+            <td>Вес</td>
+            <td>500 г</td>
+          </tr>
+          <tr>
+            <td>Комплектация</td>
+            <td>Товар, инструкция, упаковка</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- Описание                                    -->
+    <!-- ========================================== -->
+    <section class="section">
+      <h2 class="section__title">Описание</h2>
+      <p>
+        Товар 1 — это учебный товар, который используется для демонстрации
+        подробной карточки товара в рамках дисциплины «Фронтенд и бэкенд разработка».
+      </p>
+      <p>
+        В карточке показаны основные элементы: изображение, цена, скидка,
+        рейтинг, наличие, кнопки заказа и подробная таблица характеристик.
+      </p>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- Похожие товары                              -->
+    <!-- ========================================== -->
+    <section class="section">
+      <h2 class="section__title">Похожие товары</h2>
+
+      <div class="products-grid">
+
+        <article class="product-card">
+          <h3 class="product-card__title">Товар 2</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">Цена: 1 500 руб.</p>
+          <a class="button button--primary product-card__button" href="catalog.html">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+          <h3 class="product-card__title">Товар 3</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">Цена: 2 000 руб.</p>
+          <a class="button button--primary product-card__button" href="catalog.html">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+          <h3 class="product-card__title">Смартфон Galaxy S24</h3>
+          <p class="product-card__description">Флагманский смартфон с отличной камерой.</p>
+          <p class="product-card__price">Цена: 65 000 руб.</p>
+          <a class="button button--primary product-card__button" href="catalog.html">Подробнее</a>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- НОВОЕ УЛУЧШЕННОЕ МОДАЛЬНОЕ ОКНО              -->
+  <!-- ========================================== -->
+  <dialog class="order-dialog"
+          id="order-dialog"
+          aria-labelledby="order-dialog-title"
+          aria-describedby="order-dialog-description">
+
+    <!-- Шапка -->
+    <header class="order-dialog__header">
+      <div class="order-dialog__heading">
+        <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+        <p class="order-dialog__subtitle" id="order-dialog-description">
+          Заполните форму — мы свяжемся с вами в ближайшее время.
+        </p>
+      </div>
+
+      <button class="order-dialog__close"
+              type="button"
+              id="close-order-dialog-top"
+              aria-label="Закрыть окно заявки">
+        &times;
+      </button>
+    </header>
+
+    <!-- Тело (прокручиваемое) -->
+    <div class="order-dialog__body">
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <!-- Блок: Выбранный товар -->
+        <div class="order-dialog__product-info" id="dialog-product-info" hidden style="background: #f0f8ff; padding: 12px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #cce5ff;">
+          <span style="font-size: 14px; color: #555;">Вы оформляете:</span>
+          <strong id="dialog-product-name" style="display: block; font-size: 16px; color: #0057b8; margin-top: 4px;"></strong>
+        </div>
+
+        <!-- Группа: контактные данные -->
+        <fieldset class="order-form__group">
+          <legend class="order-form__legend">Контактные данные</legend>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-name">
+              Имя <span class="order-form__required" aria-hidden="true">*</span>
+            </label>
+            <div class="order-form__input-wrapper" style="position: relative;">
+              <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">👤</span>
+              <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                     id="order-name" name="name" type="text"
+                     placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+            </div>
+            <small class="order-form__hint">Как к вам обращаться</small>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-email">
+              E-mail <span class="order-form__required" aria-hidden="true">*</span>
+            </label>
+            <div class="order-form__input-wrapper" style="position: relative;">
+              <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">✉️</span>
+              <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                     id="order-email" name="email" type="email"
+                     placeholder="example@mail.ru" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-phone">
+              Телефон <span class="order-form__required" aria-hidden="true">*</span>
+            </label>
+            <div class="order-form__input-wrapper" style="position: relative;">
+              <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">📞</span>
+              <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                     id="order-phone" name="phone" type="tel" inputmode="tel"
+                     placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+            </div>
+            <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+          </div>
+        </fieldset>
+
+        <!-- Группа: способ связи -->
+        <fieldset class="order-form__group">
+          <legend class="order-form__legend">Удобный способ связи</legend>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
+              <input type="radio" name="contact_method" value="call" checked> Звонок
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
+              <input type="radio" name="contact_method" value="email"> E-mail
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
+              <input type="radio" name="contact_method" value="messenger"> Мессенджер
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Группа: детали заявки -->
+        <fieldset class="order-form__group">
+          <legend class="order-form__legend">Детали заявки</legend>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-date">Желаемая дата связи</label>
+            <input class="order-form__input" id="order-date" name="date" type="date" style="width: 100%; box-sizing: border-box;">
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-topic">
+              Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+            </label>
+            <select class="order-form__select" id="order-topic" name="topic" required style="width: 100%; box-sizing: border-box;">
+              <option value="">Выберите тему</option>
+              <option value="product">Заказ товара</option>
+              <option value="consultation">Консультация</option>
+              <option value="delivery">Доставка</option>
+            </select>
+          </div>
+
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-comment">Комментарий</label>
+            <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию (например, удобное время для звонка)" style="width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Согласие -->
+        <div class="order-form__field order-form__field--checkbox">
+          <label class="order-form__label order-form__label--checkbox" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+            <input id="order-agreement" name="agreement" type="checkbox" required style="margin-top: 3px;">
+            <span style="font-size: 14px; line-height: 1.4;">Я согласен на обработку персональных данных и принимаю условия <a href="#" style="color: #0057b8;">политики конфиденциальности</a>.</span>
+          </label>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="order-form__actions" style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button class="button button--secondary" type="button" id="close-order-dialog">
+            Отмена
+          </button>
+          <button class="button button--primary" type="submit" style="min-width: 160px;">
+            Отправить заявку
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Сообщение об успехе -->
+  <p class="success-message" id="success-message" role="status" hidden style="position: fixed; top: 20px; right: 20px; background: #4caf50; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; font-weight: bold;">
+    Форма успешно отправлена!
+  </p>
+
+  <!-- Фиксированная кнопка "Наверх" -->
+  <a href="#top" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>
+</body>
+</html>
