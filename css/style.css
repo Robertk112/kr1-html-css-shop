@@ -485,3 +485,832 @@ a:focus-visible {
     border-radius: var(--radius-sm);
     font: inherit;
 }
+
+/* ===============================
+   Страница товара и таблица
+   =============================== */
+.product-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.product-details__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.product-details__title {
+  margin-top: 0;
+}
+
+.product-details__price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table caption {
+  margin-bottom: var(--space-sm);
+  font-weight: 700;
+  text-align: left;
+}
+
+.product-table th,
+.product-table td {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.product-table thead th {
+  background-color: var(--color-surface-accent);
+}
+
+.order-form--page {
+  max-width: 560px;
+}
+
+/* ==========================================
+   Стили для блока отзывов (index.html)
+   ========================================== */
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg, 24px);
+    margin-top: var(--space-md, 16px);
+}
+
+.review-card {
+    background-color: #fff;
+    border: 1px solid var(--color-border, #ddd);
+    border-radius: var(--radius-md, 8px);
+    padding: var(--space-md, 16px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.review-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.review-card__author {
+    font-weight: bold;
+    color: var(--color-text, #222);
+}
+
+.review-card__date {
+    font-size: 0.85em;
+    color: #777;
+}
+
+.review-card__rating {
+    color: #f39c12; /* Золотистый цвет для звезд */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.review-card__text {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95em;
+    color: #444;
+}
+
+/* ==========================================
+   Sticky-фильтр для страницы каталога
+   ========================================== */
+
+/* Убедимся, что контейнер не обрезает sticky-элемент */
+.catalog-layout {
+    align-items: start; /* Важно для Grid, чтобы aside не растягивался на всю высоту */
+}
+
+/* Применяем sticky к боковой панели */
+.catalog-filters {
+    position: sticky;
+    top: 20px; /* Отступ от верхнего края экрана. 
+                  Если у вас шапка фиксированная (position: fixed/sticky), 
+                  увеличьте это значение, например, до 80px. */
+    z-index: 10; /* Чтобы фильтр был поверх карточек товаров при прокрутке */
+    
+    /* Опционально: если нужно ограничить высоту и добавить скролл внутри фильтра */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    
+    /* Добавим небольшой фон и паддинг, чтобы при наложении на карточки фильтр читался */
+    background-color: var(--color-bg, #ffffff);
+    padding: var(--space-md, 16px);
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--color-border, #dddddd);
+}
+
+/* ==========================================
+   Стили для блока FAQ (Часто задаваемые вопросы)
+   ========================================== */
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm, 8px);
+    margin-top: var(--space-md, 16px);
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid var(--color-border, #ddd);
+    border-radius: var(--radius-sm, 6px);
+    overflow: hidden;
+}
+
+.faq-item__question {
+    font-weight: bold;
+    padding: var(--space-md, 16px);
+    cursor: pointer;
+    background-color: #f9f9f9;
+    list-style: none; /* Убираем стандартный маркер (треугольник) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+    color: var(--color-text, #222);
+}
+
+/* Убираем стандартный маркер в WebKit (Chrome, Safari) */
+.faq-item__question::-webkit-details-marker {
+    display: none;
+}
+
+/* Добавляем свой плюсик/крестик через псевдоэлемент */
+.faq-item__question::after {
+    content: '+';
+    font-size: 1.5em;
+    line-height: 1;
+    color: var(--color-primary, #0057b8);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-item__question {
+    background-color: #f0f4f8;
+    border-bottom: 1px solid var(--color-border, #ddd);
+}
+
+.faq-item[open] .faq-item__question::after {
+    content: '−'; /* Меняем плюс на минус при открытии */
+    transform: rotate(180deg);
+}
+
+.faq-item__question:hover {
+    background-color: #f0f0f0;
+}
+
+.faq-item__answer {
+    padding: var(--space-md, 16px);
+    line-height: 1.5;
+    color: #444;
+}
+.faq-item__answer p {
+    margin: 0;
+}
+
+/* ==========================================
+   Фиксированная кнопка "Наверх"
+   ========================================== */
+
+.to-top {
+    /* Фиксируем позицию относительно окна браузера */
+    position: fixed;
+    
+    /* Размещаем в правом нижнем углу с отступами */
+    bottom: 30px;
+    right: 30px;
+    
+    /* Размеры и форма */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+    /* Оформление */
+    background-color: var(--color-primary, #0057b8);
+    color: var(--color-white, #ffffff);
+    
+    /* Выравнивание стрелки по центру */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Размер шрифта для стрелки */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    
+    /* Тень для объема */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Чтобы кнопка была поверх всего контента (требование z-index) */
+    z-index: 100;
+    
+    /* Плавные переходы для эффектов */
+    transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
+}
+
+/* Эффект при наведении */
+.to-top:hover {
+    background-color: var(--color-primary-dark, #003f86);
+    transform: translateY(-5px); /* Кнопка чуть подпрыгивает вверх */
+}
+
+/* Состояние фокуса для доступности (клавиатурная навигация) */
+.to-top:focus-visible {
+    outline: 3px solid var(--color-primary, #0057b8);
+    outline-offset: 3px;
+}
+
+/* Адаптивность: на мобильных устройствах делаем кнопку чуть меньше */
+@media (max-width: 768px) {
+    .to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+/* ========================================== */
+/* Подробная карточка товара — дополнения      */
+/* ========================================== */
+
+.product-details {
+  display: grid;
+  grid-template-columns: minmax(280px, 480px) 1fr;
+  gap: var(--space-xl, 32px);
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl, 32px);
+  padding: var(--space-lg, 24px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 12px);
+  background-color: var(--color-surface, #fff);
+}
+
+.product-details__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.product-details__image {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  background-color: var(--color-bg, #f5f5f5);
+}
+
+.product-details__thumbs {
+  display: flex;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-details__thumb {
+  width: 72px;
+  height: 56px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 6px);
+  background-color: var(--color-bg, #f5f5f5);
+  cursor: pointer;
+}
+
+.product-details__thumb--active {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.product-details__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.product-details__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.product-details__sku {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-muted, #777);
+}
+
+.product-details__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.95rem;
+}
+
+.product-details__stars {
+  color: #f5a623;
+  letter-spacing: 2px;
+}
+
+.product-details__reviews {
+  color: var(--color-muted, #777);
+}
+
+.product-details__price-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin: var(--space-sm) 0;
+}
+
+.product-details__old-price {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-muted, #777);
+  text-decoration: line-through;
+}
+
+.product-details__discount {
+  margin: 0;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  color: var(--color-white, #fff);
+  background-color: var(--color-danger, #e53935);
+  border-radius: var(--radius-sm, 6px);
+}
+
+.product-details__stock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.95rem;
+}
+
+.product-details__stock-status--in {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.product-details__stock-count {
+  color: var(--color-muted, #777);
+}
+
+.product-details__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.product-details__short-specs {
+  display: grid;
+  gap: var(--space-xs, 4px);
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  background-color: var(--color-bg, #fafafa);
+}
+
+.product-details__spec-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-sm);
+  padding: var(--space-xs, 4px) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-details__spec-row:last-child {
+  border-bottom: none;
+}
+
+.product-details__spec-row dt {
+  color: var(--color-muted, #777);
+  font-size: 0.9rem;
+}
+
+.product-details__spec-row dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .product-details {
+    grid-template-columns: 1fr;
+    padding: var(--space-md);
+  }
+
+  .product-details__spec-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================== */
+/* Улучшенное модальное окно                   */
+/* ========================================== */
+
+.order-dialog {
+  width: min(100% - 32px, 640px);
+  max-height: min(90vh, 820px);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg, 12px);
+  background-color: var(--color-surface, #fff);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden; /* важно: скрываем переполнение, чтобы работала прокрутка тела */
+}
+
+.order-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* Шапка */
+.order-dialog__header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  background-color: var(--color-surface, #fff);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.order-dialog__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs, 4px);
+}
+
+.order-dialog__title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.order-dialog__subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted, #777);
+}
+
+.order-dialog__close {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-muted, #777);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.order-dialog__close:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg, #f5f5f5);
+  border-color: var(--color-primary);
+}
+
+.order-dialog__close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Тело — прокручивается отдельно */
+.order-dialog__body {
+  max-height: calc(90vh - 120px);
+  overflow-y: auto;
+  padding: var(--space-lg);
+}
+
+/* Форма */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.order-form__group {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.order-form__legend {
+  margin-bottom: var(--space-sm);
+  padding: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.order-form__field {
+  margin-bottom: var(--space-md);
+}
+
+.order-form__field:last-child {
+  margin-bottom: 0;
+}
+
+.order-form__label {
+  display: block;
+  margin-bottom: var(--space-xs, 4px);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.order-form__required {
+  color: var(--color-danger, #e53935);
+}
+
+.order-form__input,
+.order-form__select,
+.order-form__textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 6px);
+  font: inherit;
+  background-color: var(--color-bg, #fff);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-form__input:hover,
+.order-form__select:hover,
+.order-form__textarea:hover {
+  border-color: var(--color-primary);
+}
+
+.order-form__input:focus-visible,
+.order-form__select:focus-visible,
+.order-form__textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.order-form__textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.order-form__hint {
+  display: block;
+  margin-top: var(--space-xs, 4px);
+  font-size: 0.8rem;
+  color: var(--color-muted, #777);
+}
+
+/* Чекбокс */
+.order-form__field--checkbox {
+  margin-top: var(--space-sm);
+}
+
+.order-form__label--checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.order-form__label--checkbox input {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+/* Кнопки */
+.order-form__actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: var(--space-md) 0 0;
+  background: linear-gradient(to top, var(--color-surface, #fff) 70%, transparent);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .order-dialog__header,
+  .order-dialog__body {
+    padding: var(--space-md);
+  }
+
+  .order-form__actions {
+    flex-direction: column-reverse;
+  }
+
+  .order-form__actions .button {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   Стили для галереи в карточке товара
+   ========================================== */
+
+/* Главная картинка */
+.product-details__image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #f4f4f4;
+    border-radius: var(--radius-md, 8px);
+    margin-bottom: var(--space-sm, 8px);
+}
+
+/* Контейнер для миниатюр */
+.product-details__thumbs {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Сами миниатюры */
+.product-details__thumb {
+    width: 70px;
+    height: 70px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm, 6px);
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+}
+
+/* Картинки внутри миниатюр */
+.product-details__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Активная миниатюра (подсветка) */
+.product-details__thumb--active {
+    border-color: var(--color-primary, #0057b8);
+}
+
+/* Эффект при наведении на миниатюру */
+.product-details__thumb:hover {
+    border-color: #999;
+}
+
+/* ==========================================
+   Улучшенное модальное окно (Dialog)
+   ========================================== */
+
+/* Задний фон (Overlay) */
+.order-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px); /* Эффект размытия фона */
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Само окно */
+.order-dialog {
+    border: none;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    overflow: hidden; /* Чтобы углы были скруглены */
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Шапка окна */
+.order-dialog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 24px;
+    border-bottom: 1px solid #eee;
+    background-color: #fcfcfc;
+}
+
+.order-dialog__title {
+    margin: 0 0 4px 0;
+    font-size: 1.4em;
+    color: #222;
+}
+
+.order-dialog__subtitle {
+    margin: 0;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.order-dialog__close {
+    background: #f0f0f0;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.order-dialog__close:hover {
+    background: #e0e0e0;
+    color: #000;
+}
+
+/* Тело окна (прокрутка) */
+.order-dialog__body {
+    padding: 24px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Поля ввода */
+.order-form__input, .order-form__select, .order-form__textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.order-form__input:focus, .order-form__select:focus, .order-form__textarea:focus {
+    outline: none;
+    border-color: #0057b8;
+    box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.15);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   Закрепленная шапка сайта (Sticky Header)
+   ========================================== */
+
+.site-header {
+    position: sticky; /* Шапка "прилипает" при прокрутке */
+    top: 0;           /* Прилипает к самому верху экрана */
+    z-index: 1000;    /* Гарантирует, что шапка будет поверх всех остальных элементов */
+    
+    /* Добавляем фон, чтобы при прокрутке контент не просвечивал сквозь шапку */
+    background-color: var(--color-bg, #ffffff);
+    
+    /* Легкая тень, чтобы визуально отделить шапку от контента при прокрутке */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
