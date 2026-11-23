@@ -69,9 +69,9 @@
           <div class="phone-field">
             <span class="phone-field__icon" aria-hidden="true">☎</span>
             <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
-                 placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+                 placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required aria-describedby="order-phone-hint">
           </div>
-          <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
         </div>
 
         <div class="field">
@@ -115,6 +115,6 @@
     </footer>
 
     <!-- Фиксированная кнопка "Наверх" -->
-    <a href="#" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>
+    <a href="#top" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>
 </body>
 </html>

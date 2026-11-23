@@ -36,18 +36,81 @@ if (orderModal) {
 }
 
 if (orderForm) {
+  const fields = [...orderForm.elements].filter((field) => field.id && field.willValidate);
+  const errors = new Map();
+
+  function clearError(field) {
+    const error = errors.get(field);
+    if (!error) return;
+
+    const descriptions = (field.getAttribute('aria-describedby') || '').split(/\s+/)
+      .filter((id) => id && id !== error.id);
+    if (descriptions.length) field.setAttribute('aria-describedby', descriptions.join(' '));
+    else field.removeAttribute('aria-describedby');
+    field.removeAttribute('aria-invalid');
+    error.remove();
+    errors.delete(field);
+  }
+
+  function showError(field) {
+    const { validity } = field;
+    let message = field.validationMessage;
+    if (validity.valueMissing) {
+      message = field.type === 'checkbox' ? 'Поставьте отметку о согласии.' : 'Заполните это поле.';
+      if (field.tagName === 'SELECT') message = 'Выберите вариант из списка.';
+    } else if (validity.typeMismatch && field.type === 'email') {
+      message = 'Введите адрес в формате name@example.com.';
+    } else if (validity.patternMismatch && field.type === 'tel') {
+      message = 'Введите телефон в формате +7 (900) 000-00-00.';
+    } else if (validity.tooShort) {
+      message = 'Введите не менее ' + field.minLength + ' символов.';
+    }
+
+    let error = errors.get(field);
+    if (!error) {
+      error = document.createElement('p');
+      error.className = 'order-form__error';
+      error.id = field.id + '-error';
+      const container = field.closest('.field, .order-form__agreement');
+      if (container?.classList.contains('order-form__agreement')) container.after(error);
+      else if (container) container.append(error);
+      else field.after(error);
+      const descriptions = field.getAttribute('aria-describedby') || '';
+      field.setAttribute('aria-describedby', (descriptions + ' ' + error.id).trim());
+      field.setAttribute('aria-invalid', 'true');
+      errors.set(field, error);
+    }
+    error.textContent = message;
+  }
+
   orderForm.addEventListener('reset', () => {
     successMessage.hidden = true;
     orderForm.classList.remove('was-validated');
+    for (const field of fields) clearError(field);
+  });
+
+  orderForm.addEventListener('input', ({ target }) => {
+    if (!errors.has(target)) return;
+    if (target.validity.valid) clearError(target);
+    else showError(target);
   });
 
   orderForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (!orderForm.checkValidity()) {
+    let firstInvalid;
+    for (const field of fields) {
+      if (field.validity.valid) clearError(field);
+      else {
+        showError(field);
+        firstInvalid ??= field;
+      }
+    }
+
+    if (firstInvalid) {
       successMessage.hidden = true;
       orderForm.classList.add('was-validated');
-      orderForm.reportValidity();
+      firstInvalid.focus();
       return;
     }
 
@@ -56,7 +119,6 @@ if (orderForm) {
     if (orderModal) orderModal.close();
   });
 }
-
 
 const estimateForm = document.querySelector('.estimate-form');
 if (estimateForm) {

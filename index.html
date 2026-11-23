@@ -262,9 +262,9 @@
           <span class="phone-field__icon" aria-hidden="true">☎</span>
           <input class="order-form__input"
                                    id="order-phone" name="phone" type="tel" inputmode="tel"
-                                   placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+                                   placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required aria-describedby="order-phone-hint">
         </div>
-                        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+                        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
                     </div>
                 </fieldset>
 
@@ -315,7 +315,7 @@
                 <div class="order-form__agreement">
           <input class="choice-input" id="order-agreement" name="agreement" type="checkbox" required>
           <label class="choice-label" for="order-agreement">
-                        <span style="font-size: 14px; line-height: 1.4;">Я согласен на обработку персональных данных и принимаю условия <a href="#" style="color: #0057b8;">политики конфиденциальности</a>.</span>
+                        <span>Я согласен на обработку данных в демонстрационной форме.</span>
                     </label>
         </div>
 
