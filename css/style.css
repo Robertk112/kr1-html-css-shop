@@ -1586,3 +1586,24 @@ body:has(.order-dialog) .success-message {
 .order-form [aria-invalid="true"] {
     border-color: var(--color-danger);
 }
+
+.catalog-price-range {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+}
+
+.catalog-price-range .filters-form__input {
+    display: block;
+    margin-top: .25rem;
+}
+
+.catalog-card-category {
+    margin: .25rem 0 .45rem;
+    color: #62534c;
+    font-size: .875rem;
+}
+
+.catalog-products .product-card {
+    box-shadow: 0 3px 12px rgb(46 32 27 / 7%);
+}

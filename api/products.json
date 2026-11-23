@@ -1,0 +1,200 @@
+[
+  {
+    "id": "item-1",
+    "category": "beans",
+    "price": 1000,
+    "name": "Бразилия Серрадо",
+    "description": "Орехи, какао и мягкая сладость. Арабика в зёрнах, 250 г.",
+    "image": "images/roast-1.jpg",
+    "alt": "Бразилия Серрадо",
+    "badge": "",
+    "href": "product.html"
+  },
+  {
+    "id": "item-2",
+    "category": "ground",
+    "price": 850,
+    "name": "Эспрессо Бленд",
+    "description": "Молотый кофе для гейзерной кофеварки, 250 г.",
+    "image": "images/roast-2.jpg",
+    "alt": "Эспрессо Бленд",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-3",
+    "category": "makers",
+    "price": 2490,
+    "name": "Гейзерная кофеварка Moka",
+    "description": "Алюминиевая кофеварка на 3 порции.",
+    "image": "images/roast-3.jpg",
+    "alt": "Гейзерная кофеварка Moka",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-4",
+    "category": "grinders",
+    "price": 3990,
+    "name": "Ручная кофемолка Mill",
+    "description": "Стальные жернова и регулировка помола.",
+    "image": "images/roast-4.jpg",
+    "alt": "",
+    "badge": "Скидка",
+    "href": ""
+  },
+  {
+    "id": "item-5",
+    "category": "makers",
+    "price": 1790,
+    "name": "Френч-пресс Glass",
+    "description": "Термостойкое стекло, 600 мл.",
+    "image": "images/roast-5.jpg",
+    "alt": "Френч-пресс Glass",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-6",
+    "category": "accessories",
+    "price": 1390,
+    "name": "Воронка Ceramic 02",
+    "description": "Керамический пуровер на 1–4 чашки.",
+    "image": "images/roast-6.jpg",
+    "alt": "",
+    "badge": "Новинка",
+    "href": ""
+  },
+  {
+    "id": "item-7",
+    "category": "beans",
+    "price": 1190,
+    "name": "Колумбия Уила",
+    "description": "Карамель и красное яблоко. Зёрна, 250 г.",
+    "image": "images/roast-1.jpg",
+    "alt": "Колумбия Уила",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-8",
+    "category": "beans",
+    "price": 1290,
+    "name": "Эфиопия Сидамо",
+    "description": "Цветы и цитрус. Зёрна светлой обжарки, 250 г.",
+    "image": "images/roast-1.jpg",
+    "alt": "",
+    "badge": "Скидка",
+    "href": ""
+  },
+  {
+    "id": "item-9",
+    "category": "ground",
+    "price": 890,
+    "name": "Утренний фильтр",
+    "description": "Молотая арабика с нотами яблока, 250 г.",
+    "image": "images/roast-2.jpg",
+    "alt": "Утренний фильтр",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-10",
+    "category": "ground",
+    "price": 940,
+    "name": "Шоколадный бленд",
+    "description": "Какао и фундук. Молотый кофе, 250 г.",
+    "image": "images/roast-2.jpg",
+    "alt": "",
+    "badge": "Новинка",
+    "href": ""
+  },
+  {
+    "id": "item-11",
+    "category": "makers",
+    "price": 3290,
+    "name": "Гейзерная кофеварка Moka XL",
+    "description": "Объём 300 мл, на 6 небольших порций.",
+    "image": "images/roast-3.jpg",
+    "alt": "Гейзерная кофеварка Moka XL",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-12",
+    "category": "grinders",
+    "price": 2890,
+    "name": "Кофемолка Mill Compact",
+    "description": "Ручная модель с контейнером на 20 г.",
+    "image": "images/roast-4.jpg",
+    "alt": "Кофемолка Mill Compact",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-13",
+    "category": "makers",
+    "price": 1290,
+    "name": "Френч-пресс Glass Mini",
+    "description": "Стеклянная колба, 350 мл.",
+    "image": "images/roast-5.jpg",
+    "alt": "Френч-пресс Glass Mini",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-14",
+    "category": "accessories",
+    "price": 1190,
+    "name": "Воронка Ceramic 01",
+    "description": "Керамический пуровер на 1–2 чашки.",
+    "image": "images/roast-6.jpg",
+    "alt": "",
+    "badge": "Скидка",
+    "href": ""
+  },
+  {
+    "id": "item-15",
+    "category": "beans",
+    "price": 1240,
+    "name": "Гватемала Антигуа",
+    "description": "Тёмный шоколад и слива. Зёрна, 250 г.",
+    "image": "images/roast-1.jpg",
+    "alt": "Гватемала Антигуа",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-16",
+    "category": "beans",
+    "price": 1590,
+    "name": "Домашний эспрессо",
+    "description": "Зерновая смесь для эспрессо и молочных напитков, 500 г.",
+    "image": "images/roast-1.jpg",
+    "alt": "Домашний эспрессо",
+    "badge": "",
+    "href": ""
+  },
+  {
+    "id": "item-17",
+    "category": "ground",
+    "price": 1390,
+    "name": "Декаф для фильтра",
+    "description": "Молотый кофе без кофеина, 250 г.",
+    "image": "images/roast-2.jpg",
+    "alt": "",
+    "badge": "Новинка",
+    "href": ""
+  },
+  {
+    "id": "item-18",
+    "category": "accessories",
+    "price": 1890,
+    "name": "Набор для пуровера",
+    "description": "Керамическая воронка и 40 бумажных фильтров.",
+    "image": "images/roast-6.jpg",
+    "alt": "Набор для пуровера",
+    "badge": "",
+    "href": ""
+  }
+]
