@@ -3,79 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-    <title>Каталог товаров – Учебный интернет-магазин</title>
+    <meta name="description" content="Каталог товаров RoastLab.">
+    <title>Каталог товаров – RoastLab</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+      <div class="page-inner">
+        <a class="site-header__logo" href="index.html">RoastLab</a>
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Бразилия Серрадо</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-    <main>
+    <main class="page">
 
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a class="breadcrumbs__link" href="index.html">Главная</a>
-            <span class="breadcrumbs__current">Каталог</span>
+            <span class="muted">Каталог</span>
         </nav>
 
         <section class="section">
             <h1 class="section__title">Каталог товаров</h1>
-            <p>На этой странице представлен учебный каталог товаров.</p>
+            <p>Подберите кофе и оборудование по категории и цене.</p>
         </section>
 
         <section class="catalog-layout">
 
-            <aside class="catalog-filters">
+            <aside class="catalog-filters"><div>
                 <h2 class="catalog-filters__title">Фильтры</h2>
 
                 <form class="filters-form" action="#" method="get">
 
-                    <fieldset class="filters-form__group">
-                        <legend class="filters-form__legend">Категория</legend>
-                        <label class="filters-form__label">
-                            <input type="checkbox" name="category" value="all"> Все товары
-                        </label>
-                        <label class="filters-form__label">
-                            <input type="checkbox" name="category" value="popular"> Популярные
-                        </label>
-                        <label class="filters-form__label">
-                            <input type="checkbox" name="category" value="new"> Новинки
-                        </label>
-                    </fieldset>
+                    <fieldset class="field">
+        <legend class="field-title">Категория</legend>
+        <label class="filters-form__label"><input class="choice-input" type="checkbox" name="category" value="beans"> Кофе в зёрнах</label>
+        <label class="filters-form__label"><input class="choice-input" type="checkbox" name="category" value="ground"> Молотый кофе</label>
+        <label class="filters-form__label"><input class="choice-input" type="checkbox" name="category" value="makers"> Кофеварки и френч-прессы</label>
+        <label class="filters-form__label"><input class="choice-input" type="checkbox" name="category" value="grinders"> Кофемолки</label>
+        <label class="filters-form__label"><input class="choice-input" type="checkbox" name="category" value="accessories"> Аксессуары</label>
+      </fieldset>
 
-                    <fieldset class="filters-form__group">
-                        <legend class="filters-form__legend">Разделы каталога</legend>
-                        <ul class="filters-form__nav-list" style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 8px;">
-                                <a href="category-laptops.html" class="filters-form__link">Ноутбуки</a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="#" class="filters-form__link">Смартфоны (скоро)</a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="#" class="filters-form__link">Аксессуары (скоро)</a>
-                            </li>
-                        </ul>
-                    </fieldset>
-
-                    <fieldset class="filters-form__group">
-                        <legend class="filters-form__legend">Цена</legend>
+                    <fieldset class="field">
+                        <legend class="field-title">Цена, ₽</legend>
                         <label class="filters-form__label" for="price-from">От</label>
                         <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
                         <label class="filters-form__label" for="price-to">До</label>
@@ -84,150 +67,266 @@
 
                     <button class="button button--primary" type="submit">Применить</button>
 
+                <button class="button button--secondary" type="reset">Сбросить</button>
                 </form>
-            </aside>
+            </div></aside>
 
             <section class="catalog-products">
-                <div class="catalog-products__header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); flex-wrap: wrap; gap: 10px;">
-                    <h2 class="section__title" style="margin-bottom: 0;">Список товаров</h2>
-                    <a href="category-laptops.html" class="button button--secondary">Смотреть ноутбуки</a>
+                <div class="catalog-products__header">
+                    <h2 class="section__title">Список товаров</h2>
+                    <a href="category-coffee.html" class="button button--secondary">Смотреть кофе в зёрнах</a>
                 </div>
 
+                <p class="catalog-status" id="catalog-results" role="status"></p>
                 <div class="products-grid">
 
                     <!-- Товары 1, 2, 3 -->
-                    <article class="product-card">
-                        <h3 class="product-card__title">Товар 1</h3>
-                        <p class="product-card__description">Краткое описание учебного товара.</p>
-                        <p class="product-card__price">Цена: 1000 руб.</p>
-                        <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1000" id="item-1">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title"><a href="product.html">Бразилия Серрадо</a></h3>
+    <p class="product-card__description">Орехи, какао и мягкая сладость. Арабика в зёрнах, 250 г.</p>
+    <p class="product-card__price">1 000 ₽</p>
+    <a class="button button--secondary" href="product.html">Подробнее</a>
+    <button class="button button--primary" type="button" data-product="Бразилия Серрадо">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Товар 2</h3>
-                        <p class="product-card__description">Краткое описание учебного товара.</p>
-                        <p class="product-card__price">Цена: 1500 руб.</p>
-                        <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card" data-category="ground" data-price="850" id="item-2">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Эспрессо Бленд</h3>
+    <p class="product-card__description">Молотый кофе для гейзерной кофеварки, 250 г.</p>
+    <p class="product-card__price">850 ₽</p>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Товар 3</h3>
-                        <p class="product-card__description">Краткое описание учебного товара.</p>
-                        <p class="product-card__price">Цена: 2000 руб.</p>
-                        <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Эспрессо Бленд">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="makers" data-price="2490" id="item-3">
+    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Гейзерная кофеварка Moka</h3>
+    <p class="product-card__description">Алюминиевая кофеварка на 3 порции.</p>
+    <p class="product-card__price">2 490 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Гейзерная кофеварка Moka">Заказать</button>
+    </div>
+  </article>
+</div>
 
                     <!-- 15 новых карточек -->
-                    <article class="product-card product-card--discount">
-                        <span class="product-card__badge">Скидка</span>
-                        <h3 class="product-card__title">Смартфон Galaxy S24</h3>
-                        <p class="product-card__description">Флагманский смартфон с отличной камерой.</p>
-                        <p class="product-card__price">Цена: 65 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Смартфон Galaxy S24">Заказать</button>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card product-card--discount" data-category="grinders" data-price="3990" id="item-4">
+    <img class="product-card__image" src="images/roast-4.jpg" srcset="images/roast-4-252.jpg 252w, images/roast-4.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Скидка</span>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Смартфон iPhone 15</h3>
-                        <p class="product-card__description">Смартфон от Apple с процессором A16.</p>
-                        <p class="product-card__price">Цена: 85 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Смартфон iPhone 15">Заказать</button>
-                    </article>
+    <h3 class="product-card__title">Ручная кофемолка Mill</h3>
+    <p class="product-card__description">Стальные жернова и регулировка помола.</p>
+    <p class="product-card__price">3 990 ₽</p>
 
-                    <article class="product-card">
-                        <span class="product-card__badge product-card__badge--new">Новинка</span>
-                        <h3 class="product-card__title">Планшет iPad Air</h3>
-                        <p class="product-card__description">Легкий планшет для работы и творчества.</p>
-                        <p class="product-card__price">Цена: 55 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Планшет iPad Air">Заказать</button>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Ручная кофемолка Mill">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Наушники Sony WH-1000XM5</h3>
-                        <p class="product-card__description">Беспроводные наушники с шумоподавлением.</p>
-                        <p class="product-card__price">Цена: 30 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Наушники Sony WH-1000XM5">Заказать</button>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card" data-category="makers" data-price="1790" id="item-5">
+    <img class="product-card__image" src="images/roast-5.jpg" srcset="images/roast-5-252.jpg 252w, images/roast-5.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Френч-пресс Glass</h3>
+    <p class="product-card__description">Термостойкое стекло, 600 мл.</p>
+    <p class="product-card__price">1 790 ₽</p>
 
-                    <article class="product-card product-card--discount">
-                        <span class="product-card__badge">Скидка</span>
-                        <h3 class="product-card__title">TWS-наушники AirPods Pro 2</h3>
-                        <p class="product-card__description">Вкладыши с активным шумоподавлением.</p>
-                        <p class="product-card__price">Цена: 22 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="TWS-наушники AirPods Pro 2">Заказать</button>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Френч-пресс Glass">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Умные часы Apple Watch Series 9</h3>
-                        <p class="product-card__description">Смарт-часы с ЭКГ и мониторингом сна.</p>
-                        <p class="product-card__price">Цена: 40 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Умные часы Apple Watch Series 9">Заказать</button>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card" data-category="accessories" data-price="1390" id="item-6">
+    <img class="product-card__image" src="images/roast-6.jpg" srcset="images/roast-6-252.jpg 252w, images/roast-6.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Новинка</span>
 
-                    <article class="product-card">
-                        <span class="product-card__badge product-card__badge--new">Новинка</span>
-                        <h3 class="product-card__title">Фитнес-браслет Mi Band 8</h3>
-                        <p class="product-card__description">Бюджетный трекер активности и сна.</p>
-                        <p class="product-card__price">Цена: 3 500 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Фитнес-браслет Mi Band 8">Заказать</button>
-                    </article>
+    <h3 class="product-card__title">Воронка Ceramic 02</h3>
+    <p class="product-card__description">Керамический пуровер на 1–4 чашки.</p>
+    <p class="product-card__price">1 390 ₽</p>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Фотоаппарат Canon EOS R50</h3>
-                        <p class="product-card__description">Беззеркальная камера для начинающих.</p>
-                        <p class="product-card__price">Цена: 70 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Фотоаппарат Canon EOS R50">Заказать</button>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Воронка Ceramic 02">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Экшн-камера GoPro Hero 12</h3>
-                        <p class="product-card__description">Камера для активного отдыха и спорта.</p>
-                        <p class="product-card__price">Цена: 35 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Экшн-камера GoPro Hero 12">Заказать</button>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1190" id="item-7">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Колумбия Уила</h3>
+    <p class="product-card__description">Карамель и красное яблоко. Зёрна, 250 г.</p>
+    <p class="product-card__price">1 190 ₽</p>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Умная колонка Яндекс Станция Макс</h3>
-                        <p class="product-card__description">Колонка с голосовым помощником Алиса.</p>
-                        <p class="product-card__price">Цена: 20 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Умная колонка Яндекс Станция Макс">Заказать</button>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Колумбия Уила">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                    <article class="product-card product-card--discount">
-                        <span class="product-card__badge">Скидка</span>
-                        <h3 class="product-card__title">Механическая клавиатура Keychron K2</h3>
-                        <p class="product-card__description">Беспроводная клавиатура для программистов.</p>
-                        <p class="product-card__price">Цена: 8 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Механическая клавиатура Keychron K2">Заказать</button>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card product-card--discount" data-category="beans" data-price="1290" id="item-8">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Скидка</span>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Игровая мышь Logitech G Pro</h3>
-                        <p class="product-card__description">Беспроводная мышь для киберспорта.</p>
-                        <p class="product-card__price">Цена: 12 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Игровая мышь Logitech G Pro">Заказать</button>
-                    </article>
+    <h3 class="product-card__title">Эфиопия Сидамо</h3>
+    <p class="product-card__description">Цветы и цитрус. Зёрна светлой обжарки, 250 г.</p>
+    <p class="product-card__price">1 290 ₽</p>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Монитор Dell UltraSharp 27"</h3>
-                        <p class="product-card__description">Профессиональный 4K-монитор с точной цветопередачей.</p>
-                        <p class="product-card__price">Цена: 45 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Монитор Dell UltraSharp 27&quot;">Заказать</button>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Эфиопия Сидамо">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                    <article class="product-card">
-                        <span class="product-card__badge product-card__badge--new">Новинка</span>
-                        <h3 class="product-card__title">Внешний SSD Samsung T7 1TB</h3>
-                        <p class="product-card__description">Скоростной портативный твердотельный накопитель.</p>
-                        <p class="product-card__price">Цена: 14 000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Внешний SSD Samsung T7 1TB">Заказать</button>
-                    </article>
+                    <div class="product-column">
+  <article class="product-card" data-category="ground" data-price="890" id="item-9">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Утренний фильтр</h3>
+    <p class="product-card__description">Молотая арабика с нотами яблока, 250 г.</p>
+    <p class="product-card__price">890 ₽</p>
 
-                    <article class="product-card">
-                        <h3 class="product-card__title">Пауэрбанк Xiaomi 20000 mAh</h3>
-                        <p class="product-card__description">Емкий аккумулятор с быстрой зарядкой.</p>
-                        <p class="product-card__price">Цена: 4 500 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Пауэрбанк Xiaomi 20000 mAh">Заказать</button>
-                    </article>
+    <button class="button button--primary" type="button" data-product="Утренний фильтр">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="ground" data-price="940" id="item-10">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Новинка</span>
+
+    <h3 class="product-card__title">Шоколадный бленд</h3>
+    <p class="product-card__description">Какао и фундук. Молотый кофе, 250 г.</p>
+    <p class="product-card__price">940 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Шоколадный бленд">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="makers" data-price="3290" id="item-11">
+    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Гейзерная кофеварка Moka XL</h3>
+    <p class="product-card__description">Объём 300 мл, на 6 небольших порций.</p>
+    <p class="product-card__price">3 290 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Гейзерная кофеварка Moka XL">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="grinders" data-price="2890" id="item-12">
+    <img class="product-card__image" src="images/roast-4.jpg" srcset="images/roast-4-252.jpg 252w, images/roast-4.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Кофемолка Mill Compact</h3>
+    <p class="product-card__description">Ручная модель с контейнером на 20 г.</p>
+    <p class="product-card__price">2 890 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Кофемолка Mill Compact">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="makers" data-price="1290" id="item-13">
+    <img class="product-card__image" src="images/roast-5.jpg" srcset="images/roast-5-252.jpg 252w, images/roast-5.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Френч-пресс Glass Mini</h3>
+    <p class="product-card__description">Стеклянная колба, 350 мл.</p>
+    <p class="product-card__price">1 290 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Френч-пресс Glass Mini">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card product-card--discount" data-category="accessories" data-price="1190" id="item-14">
+    <img class="product-card__image" src="images/roast-6.jpg" srcset="images/roast-6-252.jpg 252w, images/roast-6.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Скидка</span>
+
+    <h3 class="product-card__title">Воронка Ceramic 01</h3>
+    <p class="product-card__description">Керамический пуровер на 1–2 чашки.</p>
+    <p class="product-card__price">1 190 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Воронка Ceramic 01">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1240" id="item-15">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Гватемала Антигуа</h3>
+    <p class="product-card__description">Тёмный шоколад и слива. Зёрна, 250 г.</p>
+    <p class="product-card__price">1 240 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Гватемала Антигуа">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1590" id="item-16">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Домашний эспрессо</h3>
+    <p class="product-card__description">Зерновая смесь для эспрессо и молочных напитков, 500 г.</p>
+    <p class="product-card__price">1 590 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Домашний эспрессо">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="ground" data-price="1390" id="item-17">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Новинка</span>
+
+    <h3 class="product-card__title">Декаф для фильтра</h3>
+    <p class="product-card__description">Молотый кофе без кофеина, 250 г.</p>
+    <p class="product-card__price">1 390 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Декаф для фильтра">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                    <div class="product-column">
+  <article class="product-card" data-category="accessories" data-price="1890" id="item-18">
+    <img class="product-card__image" src="images/roast-6.jpg" srcset="images/roast-6-252.jpg 252w, images/roast-6.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Набор для пуровера</h3>
+    <p class="product-card__description">Керамическая воронка и 40 бумажных фильтров.</p>
+    <p class="product-card__price">1 890 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Набор для пуровера">Заказать</button>
+    </div>
+  </article>
+</div>
 
                 </div>
             </section>
@@ -237,157 +336,131 @@
     </main>
 
     <footer class="site-footer">
-        <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <div class="page-inner">
+        <p class="site-footer__text">&copy; 2026 RoastLab · Учебный магазин</p>
         <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+          </div>
     </footer>
 
     <!-- ========================================== -->
     <!-- НОВОЕ УЛУЧШЕННОЕ МОДАЛЬНОЕ ОКНО              -->
     <!-- ========================================== -->
-    <dialog class="order-dialog"
-            id="order-dialog"
-            aria-labelledby="order-dialog-title"
-            aria-describedby="order-dialog-description">
-
-        <header class="order-dialog__header">
-            <div class="order-dialog__heading">
-                <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-                <p class="order-dialog__subtitle" id="order-dialog-description">
-                    Заполните форму — мы свяжемся с вами в ближайшее время.
-                </p>
-            </div>
-
-            <button class="order-dialog__close"
-                    type="button"
-                    id="close-order-dialog-top"
-                    aria-label="Закрыть окно заявки">
-                &times;
-            </button>
-        </header>
-
-        <div class="order-dialog__body">
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+          <div class="order-dialog__header">
+            <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+            <button type="button" class="order-dialog__close" data-close-dialog aria-label="Закрыть">×</button>
+          </div>
+          <div class="order-dialog__body">
             <form class="order-form" id="order-form" action="#" method="post" novalidate>
 
-                <input id="selected-product" name="selected-product" type="hidden">
+                <input id="selected-product" name="selected-product" type="hidden"><p>Товар: <strong id="selected-product-name"></strong></p>
 
                 <!-- Блок: Выбранный товар -->
-                <div class="order-dialog__product-info" id="dialog-product-info" hidden style="background: #f0f8ff; padding: 12px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #cce5ff;">
-                    <span style="font-size: 14px; color: #555;">Вы оформляете:</span>
-                    <strong id="dialog-product-name" style="display: block; font-size: 16px; color: #0057b8; margin-top: 4px;"></strong>
-                </div>
 
                 <!-- Группа: контактные данные -->
-                <fieldset class="order-form__group">
-                    <legend class="order-form__legend">Контактные данные</legend>
+                <fieldset class="field">
+                    <legend class="field-title">Контактные данные</legend>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-name">
-                            Имя <span class="order-form__required" aria-hidden="true">*</span>
+                            Имя <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <div class="order-form__input-wrapper" style="position: relative;">
-                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">👤</span>
-                            <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                        <input class="order-form__input"
                                    id="order-name" name="name" type="text"
                                    placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
-                        </div>
                         <small class="order-form__hint">Как к вам обращаться</small>
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-email">
-                            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+                            E-mail <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <div class="order-form__input-wrapper" style="position: relative;">
-                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">✉️</span>
-                            <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                        <input class="order-form__input"
                                    id="order-email" name="email" type="email"
                                    placeholder="example@mail.ru" autocomplete="email" required>
-                        </div>
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-phone">
-                            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+                            Телефон <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <div class="order-form__input-wrapper" style="position: relative;">
-                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">📞</span>
-                            <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                        <div class="phone-field">
+          <span class="phone-field__icon" aria-hidden="true">☎</span>
+          <input class="order-form__input"
                                    id="order-phone" name="phone" type="tel" inputmode="tel"
                                    placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-                        </div>
+        </div>
                         <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
                     </div>
                 </fieldset>
 
                 <!-- Группа: способ связи -->
-                <fieldset class="order-form__group">
-                    <legend class="order-form__legend">Удобный способ связи</legend>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
-                            <input type="radio" name="contact_method" value="call" checked> Звонок
+                <fieldset class="field">
+                    <legend class="field-title">Удобный способ связи</legend>
+                    <div class="order-form__options">
+                        <label class="choice-label">
+                            <input class="choice-input" type="radio" name="contact_method" value="call" checked> Звонок
                         </label>
-                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
-                            <input type="radio" name="contact_method" value="email"> E-mail
+                        <label class="choice-label">
+                            <input class="choice-input" type="radio" name="contact_method" value="email"> E-mail
                         </label>
-                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
-                            <input type="radio" name="contact_method" value="messenger"> Мессенджер
+                        <label class="choice-label">
+                            <input class="choice-input" type="radio" name="contact_method" value="messenger"> Мессенджер
                         </label>
                     </div>
                 </fieldset>
 
                 <!-- Группа: детали заявки -->
-                <fieldset class="order-form__group">
-                    <legend class="order-form__legend">Детали заявки</legend>
+                <fieldset class="field">
+                    <legend class="field-title">Детали заявки</legend>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-date">Желаемая дата связи</label>
-                        <input class="order-form__input" id="order-date" name="date" type="date" style="width: 100%; box-sizing: border-box;">
+                        <input class="order-form__input" id="order-date" name="date" type="date">
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-topic">
-                            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+                            Тема заявки <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <select class="order-form__select" id="order-topic" name="topic" required style="width: 100%; box-sizing: border-box;">
+                        <select class="order-form__select" id="order-topic" name="topic" required>
                             <option value="">Выберите тему</option>
                             <option value="product">Заказ товара</option>
-                            <option value="consultation">Консультация</option>
+                            <option value="consultation">Помощь с выбором кофе</option>
                             <option value="delivery">Доставка</option>
                         </select>
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-comment">Комментарий</label>
-                        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию (например, удобное время для звонка)" style="width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
+                        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите количество, способ заваривания или вопрос о доставке (например, удобное время для звонка)"></textarea>
                     </div>
                 </fieldset>
 
                 <!-- Согласие -->
-                <div class="order-form__field order-form__field--checkbox">
-                    <label class="order-form__label order-form__label--checkbox" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
-                        <input id="order-agreement" name="agreement" type="checkbox" required style="margin-top: 3px;">
+                <div class="order-form__agreement">
+          <input class="choice-input" id="order-agreement" name="agreement" type="checkbox" required>
+          <label class="choice-label" for="order-agreement">
                         <span style="font-size: 14px; line-height: 1.4;">Я согласен на обработку персональных данных и принимаю условия <a href="#" style="color: #0057b8;">политики конфиденциальности</a>.</span>
                     </label>
-                </div>
+        </div>
 
                 <!-- Кнопки -->
-                <div class="order-form__actions" style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
-                    <button class="button button--secondary" type="button" id="close-order-dialog">
+                <div class="order-form__actions">
+                    <button class="button button--secondary" type="button" data-close-dialog>
                         Отмена
                     </button>
-                    <button class="button button--primary" type="submit" style="min-width: 160px;">
-                        Отправить заявку
+                    <button class="button button--primary" type="submit">
+                        Проверить заявку
                     </button>
                 </div>
 
             </form>
-        </div>
+          </div>
     </dialog>
 
     <!-- Сообщение об успехе -->
-    <p class="success-message" id="success-message" role="status" hidden style="position: fixed; top: 20px; right: 20px; background: #4caf50; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; font-weight: bold;">
-        Форма успешно отправлена!
-    </p>
+    <p class="success-message" id="success-message" role="alert" hidden>Данные проверены. Это демонстрационная заявка.</p>
 
     <!-- Фиксированная кнопка "Наверх" -->
     <a href="#" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>

@@ -3,59 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Контактная информация учебного интернет-магазина.">
-    <title>Контакты – Учебный интернет-магазин</title>
+    <meta name="description" content="Контактная информация RoastLab.">
+    <title>Контакты – RoastLab</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+      <div class="page-inner">
+        <a class="site-header__logo" href="index.html">RoastLab</a>
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Бразилия Серрадо</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-    <main>
+    <main class="page">
 
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a class="breadcrumbs__link" href="index.html">Главная</a>
-            <span class="breadcrumbs__current">Контакты</span>
+            <span class="muted">Контакты</span>
         </nav>
 
-        <section class="section">
+        <div class="contacts-layout">
+        <section><div class="contact-panel">
             <h1 class="section__title">Контакты</h1>
-            <p>Здесь размещается контактная информация учебного интернет-магазина.</p>
+            <p>Учебные контакты RoastLab.</p>
             <ul>
-                <li>Телефон: +7 (900) 000-00-00</li>
-                <li>E-mail: info@example.com</li>
+                <li>Телефон: <a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+                <li>E-mail: <a href="mailto:hello@roastlab.example">hello@roastlab.example</a></li>
                 <li>Адрес: г. Москва, учебный проект</li>
             </ul>
-        </section>
+        </div></section>
 
-        <section class="section" id="feedback">
+        <section  id="feedback"><div class="contact-panel">
             <h2 class="section__title">Обратная связь</h2>
-            <p>Для отправки заявки используйте форму в модальном окне на главной странице.</p>
+            <p>В форме заявки можно проверить оформление заказа или задать вопрос о выборе кофе.</p>
             <a class="button button--primary" href="order.html">Перейти к форме</a>
-        </section>
-
+        </div></section>
+        </div>
     </main>
 
     <footer class="site-footer">
-        <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <div class="page-inner">
+        <p class="site-footer__text">&copy; 2026 RoastLab · Учебный магазин</p>
         <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+          </div>
     </footer>
     <!-- Фиксированная кнопка "Наверх" -->
     <a href="#" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>

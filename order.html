@@ -3,99 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Форма заявки учебного интернет-магазина.">
-  <title>Заявка — Учебный интернет-магазин</title>
+  <meta name="description" content="Форма заявки RoastLab.">
+  <title>Заявка — RoastLab</title>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Заявка — Учебный интернет-магазин">
-  <meta property="og:description" content="Форма заявки учебного интернет-магазина.">
-  <meta property="og:image" content="https://wqlwr.github.io/kr1-html-css-shop/images/preview.jpg">
-  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:title" content="Заявка — RoastLab">
+  <meta property="og:description" content="Форма заявки RoastLab.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+      <div class="page-inner">
+        <a class="site-header__logo" href="index.html">RoastLab</a>
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Бразилия Серрадо</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="order.html">Заявка</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main class="page">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Заявка</span>
+      <span class="muted">Заявка</span>
     </nav>
 
-    <section class="section">
+    <div class="order-page">
+    <section>
       <h1 class="section__title">Оформление заявки</h1>
       <p>Заполните форму, чтобы оставить заявку на товар или получить консультацию.</p>
 
-      <form class="order-form order-form--page" action="#" method="get">
-        <div class="order-form__field">
+      <p class="success-message" id="success-message" role="alert" hidden>Данные проверены. Это демонстрационная заявка.</p>
+      <form id="order-form" class="order-form order-form--page" action="#" method="post" novalidate>
+        <div class="field">
+          <label class="order-form__label" for="order-product">Товар</label>
+          <input class="order-form__input" id="order-product" name="product" placeholder="Например, Бразилия Серрадо">
+        </div>
+        <div class="field">
           <label class="order-form__label" for="order-name">Имя</label>
           <input class="order-form__input" id="order-name" name="name" type="text"
                  placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
         </div>
 
-        <div class="order-form__field">
+        <div class="field">
           <label class="order-form__label" for="order-email">E-mail</label>
           <input class="order-form__input" id="order-email" name="email" type="email"
                  placeholder="example@mail.ru" autocomplete="email" required>
         </div>
 
-        <div class="order-form__field">
+        <div class="field">
           <label class="order-form__label" for="order-phone">Телефон</label>
-          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
+          <div class="phone-field">
+            <span class="phone-field__icon" aria-hidden="true">☎</span>
+            <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
                  placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+          </div>
           <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
         </div>
 
-        <div class="order-form__field">
+        <div class="field">
           <label class="order-form__label" for="order-topic">Тема заявки</label>
           <select class="order-form__select" id="order-topic" name="topic" required>
             <option value="">Выберите тему</option>
             <option value="product">Заказ товара</option>
-            <option value="consultation">Консультация</option>
+            <option value="consultation">Помощь с выбором кофе</option>
             <option value="delivery">Доставка</option>
           </select>
         </div>
 
-        <div class="order-form__field">
+        <div class="field">
           <label class="order-form__label" for="order-comment">Комментарий</label>
           <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4"
-                    placeholder="Укажите дополнительную информацию"></textarea>
+                    placeholder="Укажите количество, способ заваривания или вопрос о доставке"></textarea>
         </div>
 
-        <div class="order-form__field order-form__field--checkbox">
-          <label class="order-form__label">
-            <input class="order-form__input order-form__input--checkbox" id="order-agreement"
+        <div class="order-form__agreement">
+          <input class="choice-input" id="order-agreement"
                    name="agreement" type="checkbox" required>
+          <label class="choice-label" for="order-agreement">
             Я согласен на обработку данных
           </label>
         </div>
 
         <div class="order-form__actions">
           <button class="button button--secondary" type="reset">Очистить</button>
-          <button class="button button--primary" type="submit">Отправить заявку</button>
+          <button class="button button--primary" type="submit">Проверить заявку</button>
         </div>
       </form>
     </section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <div class="page-inner">
+    <p class="site-footer__text">&copy; 2026 RoastLab · Учебный магазин</p>
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
+        </div>
+    </footer>
 
     <!-- Фиксированная кнопка "Наверх" -->
     <a href="#" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>

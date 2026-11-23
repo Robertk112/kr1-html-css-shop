@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Учебный интернет-магазин: популярные товары, преимущества, отзывы клиентов.">
-    <title>Учебный интернет-магазин</title>
+    <meta name="description" content="RoastLab: популярные товары, преимущества, отзывы клиентов.">
+    <title>RoastLab</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src="js/main.js" defer></script>
 </head>
 <body id="top">
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
+      <div class="page-inner">
+        <a class="site-header__logo" href="index.html">RoastLab</a>
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Бразилия Серрадо</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
     <main>
-
-        <section class="hero">
-            <h1 class="hero__title">Учебный интернет-магазин</h1>
-            <p class="hero__text">
-                Это стартовая страница учебного frontend-проекта.
-                В дальнейшем на её основе будет разработан многостраничный
-                сайт интернет-магазина или каталога услуг.
-            </p>
-            <a class="button button--primary" href="#popular">Перейти к товарам</a>
-        </section>
+  <section class="hero">
+    <div class="page-inner">
+      <div class="hero__layout">
+        <div>
+            <h1 class="hero__title">Кофе для вашего утра</h1>
+            <p class="hero__text">Зерно, молотый кофе и всё для домашнего заваривания. Найдите свою обжарку и соберите набор для любимого способа приготовления.</p>
+            <a class="button button--primary" href="catalog.html">Открыть каталог</a>
+                </div>
+        <div>
+          <picture class="hero__picture">
+            <source media="(max-width: 360px)" srcset="images/roast-8-252.jpg 252w, images/roast-8.jpg 504w" sizes="calc(100vw - 32px)">
+            <img src="images/roast-8.jpg" alt="Чашка свежезаваренного кофе" width="504" height="333">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="page-inner">
 
         <section class="section" id="advantages">
-            <h2 class="section__title">Преимущества проекта</h2>
+            <h2 class="section__title">Почему RoastLab</h2>
             <ul class="advantages-list">
-                <li class="advantages-list__item">понятная HTML-структура;</li>
-                <li class="advantages-list__item">семантические блоки страницы;</li>
-                <li class="advantages-list__item">подключение внешнего CSS-файла;</li>
-                <li class="advantages-list__item">подготовка к разработке многостраничного сайта.</li>
+                <li><div class="advantages-list__item">Кофе для фильтра, эспрессо и гейзерной кофеварки</div></li>
+                <li><div class="advantages-list__item">Зёрна и готовый помол</div></li>
+                <li><div class="advantages-list__item">Оборудование для домашнего заваривания</div></li>
+                <li><div class="advantages-list__item">Помощь с выбором обжарки</div></li>
             </ul>
         </section>
 
@@ -54,97 +64,109 @@
 
             <div class="products-grid">
 
-                <article class="product-card">
-                    <h3 class="product-card__title">Товар 1</h3>
-                    <p class="product-card__description">Краткое описание учебного товара.</p>
-                    <p class="product-card__price">Цена: 1000 руб.</p>
-                    <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-                        Заказать
-                    </button>
-                </article>
+                <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1000" id="item-1">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title"><a href="product.html">Бразилия Серрадо</a></h3>
+    <p class="product-card__description">Орехи, какао и мягкая сладость. Арабика в зёрнах, 250 г.</p>
+    <p class="product-card__price">1 000 ₽</p>
 
-                <article class="product-card">
-                    <h3 class="product-card__title">Товар 2</h3>
-                    <p class="product-card__description">Краткое описание учебного товара.</p>
-                    <p class="product-card__price">Цена: 1500 руб.</p>
-                    <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-                        Заказать
-                    </button>
-                </article>
+    <button class="button button--primary" type="button" data-product="Бразилия Серрадо">Заказать</button>
+    </div>
+  </article>
+</div>
 
-                <article class="product-card">
-                    <h3 class="product-card__title">Товар 3</h3>
-                    <p class="product-card__description">Краткое описание учебного товара.</p>
-                    <p class="product-card__price">Цена: 2000 руб.</p>
-                    <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-                        Заказать
-                    </button>
-                </article>
+                <div class="product-column">
+  <article class="product-card" data-category="ground" data-price="850" id="item-2">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Эспрессо Бленд</h3>
+    <p class="product-card__description">Молотый кофе для гейзерной кофеварки, 250 г.</p>
+    <p class="product-card__price">850 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Эспрессо Бленд">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                <div class="product-column">
+  <article class="product-card" data-category="makers" data-price="2490" id="item-3">
+    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Гейзерная кофеварка Moka</h3>
+    <p class="product-card__description">Алюминиевая кофеварка на 3 порции.</p>
+    <p class="product-card__price">2 490 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Гейзерная кофеварка Moka">Заказать</button>
+    </div>
+  </article>
+</div>
 
             </div>
         </section>
 
         <!-- БЛОК: Отзывы -->
         <section class="section" id="reviews">
-            <h2 class="section__title">Отзывы наших клиентов</h2>
-            <p>Мы всегда рады обратной связи! Вот что говорят о нас покупатели.</p>
+            <h2 class="section__title">Примеры отзывов</h2>
+            <p></p>
 
             <div class="reviews-list">
-                
-                <article class="review-card">
+
+                <div>
+<article class="review-card">
                     <div class="review-card__header">
                         <span class="review-card__author">Анна Смирнова</span>
                         <span class="review-card__date">12 марта 2026</span>
                     </div>
-                    <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
-                    <p class="review-card__text">
-                        Заказывала смартфон, пришел быстро, всё в идеальном состоянии. Очень довольна сервисом и качеством упаковки! Обязательно вернусь ещё.
-                    </p>
+                    <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                    <p class="review-card__text">У Серрадо приятный ореховый вкус. Завариваю в гейзерной кофеварке.</p>
                 </article>
+</div>
 
-                <article class="review-card">
+                <div>
+<article class="review-card">
                     <div class="review-card__header">
                         <span class="review-card__author">Дмитрий Козлов</span>
                         <span class="review-card__date">05 марта 2026</span>
                     </div>
-                    <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
-                    <p class="review-card__text">
-                        Брал наушники для работы. Звук отличный, шумоподавление на уровне. Единственное — доставка заняла на один день больше, чем обещали. В остальном всё супер.
-                    </p>
+                    <div class="stars" aria-label="Оценка 4 из 5">★★★★☆</div>
+                    <p class="review-card__text">Кофемолка легко настраивается. Нашёл подходящий помол для фильтра.</p>
                 </article>
+</div>
 
-                <article class="review-card">
+                <div>
+<article class="review-card">
                     <div class="review-card__header">
                         <span class="review-card__author">Елена Иванова</span>
                         <span class="review-card__date">28 февраля 2026</span>
                     </div>
-                    <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
-                    <p class="review-card__text">
-                        Отличный магазин! Помогли с выбором умных часов, подробно ответили на все вопросы. Цены приятно удивили. Спасибо за консультацию!
-                    </p>
+                    <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                    <p class="review-card__text">Подобрала более светлую обжарку для воронки. В чашке хорошо слышен цитрус.</p>
                 </article>
+</div>
 
-                <article class="review-card">
+                <div>
+<article class="review-card">
                     <div class="review-card__header">
                         <span class="review-card__author">Максим Петров</span>
                         <span class="review-card__date">20 февраля 2026</span>
                     </div>
-                    <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
-                    <p class="review-card__text">
-                        Заказывал внешний SSD. Приятно удивила скорость работы сайта и удобная форма заявки. Товар оригинальный, всё проверил. Рекомендую!
-                    </p>
+                    <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                    <p class="review-card__text">Френч-пресса хватает на две кружки. Колбу легко промыть.</p>
                 </article>
+</div>
 
-                <article class="review-card">
+                <div>
+<article class="review-card">
                     <div class="review-card__header">
                         <span class="review-card__author">Ольга Соколова</span>
                         <span class="review-card__date">14 февраля 2026</span>
                     </div>
-                    <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
-                    <p class="review-card__text">
-                        Хороший ассортимент электроники. Покупала фитнес-браслет, работает исправно. Хотелось бы больше вариантов цвета в наличии, но это уже придирки.
-                    </p>
+                    <div class="stars" aria-label="Оценка 4 из 5">★★★★☆</div>
+                    <p class="review-card__text">Молотый бленд понравился с молоком. В следующий раз попробую декаф.</p>
                 </article>
+</div>
 
             </div>
         </section>
@@ -157,197 +179,160 @@
             <div class="faq-list">
                 <details class="faq-item">
                     <summary class="faq-item__question">Как быстро осуществляется доставка?</summary>
-                    <div class="faq-item__answer">
-                        <p>Доставка по городу занимает от 1 до 3 рабочих дней. В отдаленные регионы — до 7 дней. Мы всегда сообщаем точную дату при подтверждении заказа.</p>
-                    </div>
+                    <div class="faq-item__answer">Для примера в каталоге указан срок получения от 1 до 3 дней.</div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-item__question">Можно ли вернуть товар, если он не подошел?</summary>
-                    <div class="faq-item__answer">
-                        <p>Да, вы можете вернуть или обменять товар в течение 14 дней с момента покупки, при условии сохранения его товарного вида, упаковки и чека.</p>
-                    </div>
+                    <div class="faq-item__answer">Да, вы можете вернуть или обменять товар в течение 14 дней с момента покупки, при условии сохранения его товарного вида, упаковки и чека.</div>
                 </details>
 
                 <details class="faq-item">
-                    <summary class="faq-item__question">Есть ли гарантия на электронику?</summary>
-                    <div class="faq-item__answer">
-                        <p>Конечно! На все товары распространяется официальная гарантия производителя сроком от 1 года. При возникновении проблем мы поможем с сервисным обслуживанием.</p>
-                    </div>
+                    <summary class="faq-item__question">Есть ли гарантия на оборудование?</summary>
+                    <div class="faq-item__answer">Условия гарантии на оборудование уточняйте в заявке.</div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-item__question">Как оплатить заказ?</summary>
-                    <div class="faq-item__answer">
-                        <p>Вы можете оплатить заказ онлайн банковской картой, через систему быстрых платежей (СБП) или наличными курьеру при получении.</p>
-                    </div>
+                    <div class="faq-item__answer">В учебной версии оплата не проводится.</div>
                 </details>
 
                 <details class="faq-item">
                     <summary class="faq-item__question">Работаете ли вы с юридическими лицами?</summary>
-                    <div class="faq-item__answer">
-                        <p>Да, мы предоставляем полный пакет закрывающих документов для бухгалтерии и предлагаем специальные условия для оптовых заказов.</p>
-                    </div>
+                    <div class="faq-item__answer">В учебной форме можно указать пример оптового заказа и нужное количество.</div>
                 </details>
             </div>
         </section>
 
+      </div>
     </main>
 
     <footer class="site-footer" id="contacts">
-        <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <div class="page-inner">
+        <p class="site-footer__text">&copy; 2026 RoastLab · Учебный магазин</p>
         <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+          </div>
     </footer>
 
     <!-- ========================================== -->
     <!-- СУПЕР-УЛУЧШЕННОЕ МОДАЛЬНОЕ ОКНО             -->
     <!-- ========================================== -->
-    <dialog class="order-dialog"
-            id="order-dialog"
-            aria-labelledby="order-dialog-title"
-            aria-describedby="order-dialog-description">
-
-        <!-- Шапка модального окна -->
-        <header class="order-dialog__header">
-            <div class="order-dialog__heading">
-                <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-                <p class="order-dialog__subtitle" id="order-dialog-description">
-                    Заполните форму — мы свяжемся с вами в ближайшее время.
-                </p>
-            </div>
-
-            <button class="order-dialog__close"
-                    type="button"
-                    id="close-order-dialog-top"
-                    aria-label="Закрыть окно заявки">
-                &times;
-            </button>
-        </header>
-
-        <!-- Тело модального окна (прокручиваемое) -->
-        <div class="order-dialog__body">
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+          <div class="order-dialog__header">
+            <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+            <button type="button" class="order-dialog__close" data-close-dialog aria-label="Закрыть">×</button>
+          </div>
+          <div class="order-dialog__body">
             <form class="order-form" id="order-form" action="#" method="post" novalidate>
 
-                <input id="selected-product" name="selected-product" type="hidden">
+                <input id="selected-product" name="selected-product" type="hidden"><p>Товар: <strong id="selected-product-name"></strong></p>
 
                 <!-- Динамический блок: Выбранный товар -->
-                <div class="order-dialog__product-info" id="dialog-product-info" hidden style="background: #f0f8ff; padding: 12px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #cce5ff;">
-                    <span style="font-size: 14px; color: #555;">Вы оформляете:</span>
-                    <strong id="dialog-product-name" style="display: block; font-size: 16px; color: #0057b8; margin-top: 4px;"></strong>
-                </div>
 
                 <!-- Группа: контактные данные -->
-                <fieldset class="order-form__group">
-                    <legend class="order-form__legend">Контактные данные</legend>
+                <fieldset class="field">
+                    <legend class="field-title">Контактные данные</legend>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-name">
-                            Имя <span class="order-form__required" aria-hidden="true">*</span>
+                            Имя <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <div class="order-form__input-wrapper" style="position: relative;">
-                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">👤</span>
-                            <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                        <input class="order-form__input"
                                    id="order-name" name="name" type="text"
                                    placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
-                        </div>
                         <small class="order-form__hint">Как к вам обращаться</small>
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-email">
-                            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+                            E-mail <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <div class="order-form__input-wrapper" style="position: relative;">
-                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">✉️</span>
-                            <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                        <input class="order-form__input"
                                    id="order-email" name="email" type="email"
                                    placeholder="example@mail.ru" autocomplete="email" required>
-                        </div>
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-phone">
-                            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+                            Телефон <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <div class="order-form__input-wrapper" style="position: relative;">
-                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5;">📞</span>
-                            <input class="order-form__input" style="padding-left: 36px; width: 100%; box-sizing: border-box;"
+                        <div class="phone-field">
+          <span class="phone-field__icon" aria-hidden="true">☎</span>
+          <input class="order-form__input"
                                    id="order-phone" name="phone" type="tel" inputmode="tel"
                                    placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-                        </div>
+        </div>
                         <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
                     </div>
                 </fieldset>
 
                 <!-- Группа: способ связи (НОВОЕ) -->
-                <fieldset class="order-form__group">
-                    <legend class="order-form__legend">Удобный способ связи</legend>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
-                            <input type="radio" name="contact_method" value="call" checked> Звонок
+                <fieldset class="field">
+                    <legend class="field-title">Удобный способ связи</legend>
+                    <div class="order-form__options">
+                        <label class="choice-label">
+                            <input class="choice-input" type="radio" name="contact_method" value="call" checked> Звонок
                         </label>
-                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
-                            <input type="radio" name="contact_method" value="email"> E-mail
+                        <label class="choice-label">
+                            <input class="choice-input" type="radio" name="contact_method" value="email"> E-mail
                         </label>
-                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: normal;">
-                            <input type="radio" name="contact_method" value="messenger"> Мессенджер
+                        <label class="choice-label">
+                            <input class="choice-input" type="radio" name="contact_method" value="messenger"> Мессенджер
                         </label>
                     </div>
                 </fieldset>
 
                 <!-- Группа: детали заявки -->
-                <fieldset class="order-form__group">
-                    <legend class="order-form__legend">Детали заявки</legend>
+                <fieldset class="field">
+                    <legend class="field-title">Детали заявки</legend>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-date">Желаемая дата связи</label>
-                        <input class="order-form__input" id="order-date" name="date" type="date" style="width: 100%; box-sizing: border-box;">
+                        <input class="order-form__input" id="order-date" name="date" type="date">
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-topic">
-                            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+                            Тема заявки <span class="required" aria-hidden="true">*</span>
                         </label>
-                        <select class="order-form__select" id="order-topic" name="topic" required style="width: 100%; box-sizing: border-box;">
+                        <select class="order-form__select" id="order-topic" name="topic" required>
                             <option value="">Выберите тему</option>
                             <option value="product">Заказ товара</option>
-                            <option value="consultation">Консультация</option>
+                            <option value="consultation">Помощь с выбором кофе</option>
                             <option value="delivery">Доставка</option>
                         </select>
                     </div>
 
-                    <div class="order-form__field">
+                    <div class="field">
                         <label class="order-form__label" for="order-comment">Комментарий</label>
-                        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию (например, удобное время для звонка)" style="width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
+                        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите количество, способ заваривания или вопрос о доставке (например, удобное время для звонка)"></textarea>
                     </div>
                 </fieldset>
 
                 <!-- Согласие -->
-                <div class="order-form__field order-form__field--checkbox">
-                    <label class="order-form__label order-form__label--checkbox" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
-                        <input id="order-agreement" name="agreement" type="checkbox" required style="margin-top: 3px;">
+                <div class="order-form__agreement">
+          <input class="choice-input" id="order-agreement" name="agreement" type="checkbox" required>
+          <label class="choice-label" for="order-agreement">
                         <span style="font-size: 14px; line-height: 1.4;">Я согласен на обработку персональных данных и принимаю условия <a href="#" style="color: #0057b8;">политики конфиденциальности</a>.</span>
                     </label>
-                </div>
+        </div>
 
                 <!-- Подвал формы (кнопки) -->
-                <div class="order-form__actions" style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
-                    <button class="button button--secondary" type="button" id="close-order-dialog">
+                <div class="order-form__actions">
+                    <button class="button button--secondary" type="button" data-close-dialog>
                         Отмена
                     </button>
-                    <button class="button button--primary" type="submit" style="min-width: 160px;">
-                        Отправить заявку
+                    <button class="button button--primary" type="submit">
+                        Проверить заявку
                     </button>
                 </div>
 
             </form>
-        </div>
+          </div>
     </dialog>
 
     <!-- Сообщение об успехе -->
-    <p class="success-message" id="success-message" role="status" hidden style="position: fixed; top: 20px; right: 20px; background: #4caf50; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; font-weight: bold;">
-        Форма успешно отправлена!
-    </p>
+    <p class="success-message" id="success-message" role="alert" hidden>Данные проверены. Это демонстрационная заявка.</p>
 
     <!-- Фиксированная кнопка "Наверх" -->
     <a href="#top" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>

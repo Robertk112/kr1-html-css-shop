@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Категория Кофе в зёрнах — учебный интернет-магазин.">
+    <title>Кофе в зёрнах — RoastLab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+
+    <header class="site-header">
+    <div class="site-header__inner">
+      <div class="page-inner">
+        <a class="site-header__logo" href="index.html">RoastLab</a>
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="location" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Бразилия Серрадо</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+    <main class="page">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a class="breadcrumbs__link" href="index.html">Главная</a>
+            <span class="breadcrumbs__separator">/</span>
+            <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+            <span class="breadcrumbs__separator">/</span>
+            <span class="muted">Кофе в зёрнах</span>
+        </nav>
+
+        <section class="section">
+            <h1 class="section__title">Кофе в зёрнах</h1>
+            <p>Выберите зёрна под свой способ заваривания.</p>
+
+            <div class="products-grid">
+
+                <div class="product-column">
+  <article class="product-card product-card--discount" data-category="beans" data-price="1000" id="item-1">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Скидка</span>
+
+    <h3 class="product-card__title"><a href="product.html">Бразилия Серрадо</a></h3>
+    <p class="product-card__description">Орехи, какао и мягкая сладость. Арабика в зёрнах, 250 г.</p>
+    <p class="product-card__price">1 000 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Бразилия Серрадо">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1190" id="item-7">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<h3 class="product-card__title">Колумбия Уила</h3>
+    <p class="product-card__description">Карамель и красное яблоко. Зёрна, 250 г.</p>
+    <p class="product-card__price">1 190 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Колумбия Уила">Заказать</button>
+    </div>
+  </article>
+</div>
+
+                <div class="product-column">
+  <article class="product-card" data-category="beans" data-price="1290" id="item-8">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <div class="product-card__body">
+<span class="product-card__badge">Новинка</span>
+
+    <h3 class="product-card__title">Эфиопия Сидамо</h3>
+    <p class="product-card__description">Цветы и цитрус. Зёрна светлой обжарки, 250 г.</p>
+    <p class="product-card__price">1 290 ₽</p>
+
+    <button class="button button--primary" type="button" data-product="Эфиопия Сидамо">Заказать</button>
+    </div>
+  </article>
+</div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contacts">
+      <div class="page-inner">
+        <p class="site-footer__text">&copy; 2026 RoastLab · Учебный магазин</p>
+        <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+          </div>
+    </footer>
+
+    <!-- Модальное окно и сообщение об успехе -->
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+          <div class="order-dialog__header">
+            <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+            <button type="button" class="order-dialog__close" data-close-dialog aria-label="Закрыть">×</button>
+          </div>
+          <div class="order-dialog__body">
+            <form class="order-form" id="order-form" action="#" method="post" novalidate>
+            <input id="selected-product" name="selected-product" type="hidden"><p>Товар: <strong id="selected-product-name"></strong></p>
+
+            <div class="field">
+                <label class="order-form__label" for="order-name">Имя</label>
+                <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+            </div>
+
+            <div class="field">
+                <label class="order-form__label" for="order-email">E-mail</label>
+                <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+                <label class="order-form__label" for="order-phone">Телефон</label>
+                <div class="phone-field">
+          <span class="phone-field__icon" aria-hidden="true">☎</span>
+          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        </div>
+                <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+            </div>
+
+            <div class="field">
+                <label class="order-form__label" for="order-date">Дата связи</label>
+                <input class="order-form__input" id="order-date" name="date" type="date">
+            </div>
+
+            <div class="field">
+                <label class="order-form__label" for="order-topic">Тема заявки</label>
+                <select class="order-form__select" id="order-topic" name="topic" required>
+                    <option value="">Выберите тему</option>
+                    <option value="product">Заказ товара</option>
+                    <option value="consultation">Помощь с выбором кофе</option>
+                    <option value="delivery">Доставка</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label class="order-form__label" for="order-comment">Комментарий</label>
+                <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите количество, способ заваривания или вопрос о доставке"></textarea>
+            </div>
+
+            <div class="order-form__agreement">
+          <input class="choice-input" id="order-agreement" name="agreement" type="checkbox" required>
+          <label class="choice-label" for="order-agreement">
+                    Я согласен на обработку данных
+                </label>
+        </div>
+
+            <div class="order-form__actions">
+                <button class="button button--secondary" type="button" data-close-dialog>Закрыть</button>
+                <button class="button button--primary" type="submit">Проверить заявку</button>
+            </div>
+        </form>
+          </div>
+    </dialog>
+
+    <p class="success-message" id="success-message" role="alert" hidden>Данные проверены. Это демонстрационная заявка.</p>
+
+    <!-- Фиксированная кнопка "Наверх" -->
+    <a href="#" class="to-top" aria-label="Вернуться наверх" title="Наверх">↑</a>
+
+</body>
+</html>
