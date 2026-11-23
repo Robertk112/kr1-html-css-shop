@@ -10,11 +10,13 @@
     <script src="js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
 
     <header class="site-header">
     <div class="site-header__inner">
       <div class="page-inner">
         <a class="site-header__logo" href="index.html">RoastLab</a>
+        <button class="button button--secondary site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Меню</button>
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -30,7 +32,7 @@
     </div>
   </header>
 
-    <main class="page">
+    <main id="main-content" tabindex="-1" class="page">
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a class="breadcrumbs__link" href="index.html">Главная</a>
             <span class="breadcrumbs__separator">/</span>
@@ -62,7 +64,7 @@
 
                 <div class="product-column">
   <article class="product-card" data-category="beans" data-price="1190" id="item-7">
-    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Колумбия Уила" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Колумбия Уила</h3>
     <p class="product-card__description">Карамель и красное яблоко. Зёрна, 250 г.</p>

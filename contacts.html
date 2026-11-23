@@ -10,11 +10,13 @@
     <script src="js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
 
   <header class="site-header">
     <div class="site-header__inner">
       <div class="page-inner">
         <a class="site-header__logo" href="index.html">RoastLab</a>
+        <button class="button button--secondary site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Меню</button>
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -30,7 +32,7 @@
     </div>
   </header>
 
-    <main class="page">
+    <main id="main-content" tabindex="-1" class="page">
 
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a class="breadcrumbs__link" href="index.html">Главная</a>
@@ -50,8 +52,23 @@
 
         <section  id="feedback"><div class="contact-panel">
             <h2 class="section__title">Обратная связь</h2>
-            <p>В форме заявки можно проверить оформление заказа или задать вопрос о выборе кофе.</p>
-            <a class="button button--primary" href="order.html">Перейти к форме</a>
+            <p>Задайте вопрос о кофе, заваривании или заказе.</p>
+            <p class="success-message" id="success-message" role="alert" hidden>Данные проверены. Это демонстрационное обращение.</p>
+            <form id="order-form" class="order-form" action="#" method="post" novalidate>
+                <div class="field">
+                    <label class="order-form__label" for="feedback-name">Имя</label>
+                    <input class="order-form__input" id="feedback-name" name="name" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                    <label class="order-form__label" for="feedback-email">E-mail</label>
+                    <input class="order-form__input" id="feedback-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                    <label class="order-form__label" for="feedback-message">Вопрос</label>
+                    <textarea class="order-form__textarea" id="feedback-message" name="message" rows="3" required></textarea>
+                </div>
+                <button class="button button--primary" type="submit">Проверить обращение</button>
+            </form>
         </div></section>
         </div>
     </main>

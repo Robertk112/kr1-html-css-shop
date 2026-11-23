@@ -1425,3 +1425,153 @@ body:has(.order-dialog) .success-message {
 .phone-field input {
     min-width: 0;
 }
+
+/* Навигация с клавиатуры и элементы каталога. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid #633017;
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: fixed;
+    inset: .5rem auto auto .5rem;
+    z-index: 1100;
+    padding: .65rem 1rem;
+    color: #fff;
+    background: #482719;
+    border-radius: var(--radius-sm);
+    transform: translateY(calc(-100% - 1rem));
+}
+
+.skip-link:focus {
+    transform: none;
+    outline-color: #aa642d;
+}
+
+.catalog-toolbar,
+.product-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .75rem;
+}
+
+.product-tools .button {
+    border: 1px solid var(--color-border);
+}
+
+.product-tools .button[aria-pressed="true"] {
+    color: #3a2116;
+    background-color: #efcfaf;
+    border-color: #a76b41;
+    font-weight: 700;
+}
+
+.comparison-dialog {
+    width: min(60rem, calc(100% - 2rem));
+    max-height: calc(100dvh - 2rem);
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.comparison-dialog::backdrop {
+    background: rgb(0 0 0 / 65%);
+}
+
+.comparison-dialog__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.comparison-dialog__header h2,
+.comparison-grid h3,
+.comparison-grid dd,
+.mobile-specs dd {
+    margin: 0;
+}
+
+.comparison-grid,
+.mobile-specs,
+.estimate-form {
+    display: grid;
+    gap: .75rem;
+}
+
+.comparison-grid article,
+.mobile-specs div,
+.estimate-section {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+
+.comparison-grid dt,
+.mobile-specs dt,
+.estimate-form output {
+    font-weight: 700;
+}
+
+.comparison-grid dt:not(:first-child) {
+    margin-top: .75rem;
+}
+
+.mobile-specs div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .35rem 1rem;
+}
+
+.estimate-form {
+    max-width: 27rem;
+}
+
+.estimate-form label {
+    display: block;
+    margin-bottom: .35rem;
+}
+
+.estimate-form p {
+    margin: 0;
+}
+
+.order-form.was-validated :where(input, select, textarea):invalid {
+    border-color: var(--color-danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .order-dialog,
+    .order-dialog::backdrop {
+        animation: none;
+    }
+}
+
+.order-form :where(input, select, textarea):focus-visible {
+    outline: 3px solid #633017;
+    outline-offset: 3px;
+}
+
+.review-card__rating,
+.stars,
+.product-details__stars {
+    color: #88500c;
+}
+
+.review-card__date,
+.order-dialog__subtitle {
+    color: #62534c;
+}

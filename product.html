@@ -13,10 +13,12 @@
   <script src="js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <header class="site-header">
     <div class="site-header__inner">
       <div class="page-inner">
         <a class="site-header__logo" href="index.html">RoastLab</a>
+        <button class="button button--secondary site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Меню</button>
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -32,7 +34,7 @@
     </div>
   </header>
 
-  <main class="page">
+  <main id="main-content" tabindex="-1" class="page">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__separator">/</span>
@@ -137,56 +139,81 @@
     <!-- ========================================== -->
     <!-- Подробные характеристики                    -->
     <!-- ========================================== -->
+    <section class="section estimate-section" aria-labelledby="estimate-title">
+      <h2 id="estimate-title">Расчёт стоимости</h2>
+      <p>Одна упаковка «Бразилия Серрадо» стоит 1 000 ₽.</p>
+      <form class="estimate-form" action="order.html" method="get" data-price="1000">
+        <input type="hidden" name="product" value="serrado">
+        <div>
+          <label for="estimate-quantity">Количество упаковок</label>
+          <input class="order-form__input" type="number" id="estimate-quantity" name="quantity" min="1" max="12" value="1" required>
+        </div>
+        <p>Итого <output id="estimate-total" for="estimate-quantity">1 000 ₽</output></p>
+        <button class="button button--primary" type="submit">Перенести расчёт в заявку</button>
+      </form>
+    </section>
+
     <section class="section">
       <h2 class="section__title">Характеристики</h2>
 
-      <div class="table-wrapper" tabindex="0" role="region" aria-label="Таблица характеристик с горизонтальной прокруткой"><table class="product-table">
+      <div class="table-wrapper"><table class="product-table">
         <caption>Характеристики товара 1</caption>
         <thead>
           <tr>
-            <th>Параметр</th>
-            <th>Значение</th>
+            <th scope="col">Параметр</th>
+            <th scope="col">Значение</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Категория</td>
+            <th scope="row">Категория</th>
             <td>Кофе в зёрнах</td>
           </tr>
           <tr>
-            <td>Цена</td>
+            <th scope="row">Цена</th>
             <td>1 000 ₽</td>
           </tr>
           <tr>
-            <td>Наличие</td>
+            <th scope="row">Наличие</th>
             <td>В наличии</td>
           </tr>
           <tr>
-            <td>Срок получения</td>
+            <th scope="row">Срок получения</th>
             <td>1–3 дня</td>
           </tr>
           <tr>
-            <td>Обжарка</td>
+            <th scope="row">Обжарка</th>
             <td>Средняя</td>
           </tr>
           <tr>
-            <td>Вид кофе</td>
+            <th scope="row">Вид кофе</th>
             <td>100% арабика</td>
           </tr>
           <tr>
-            <td>Происхождение зерна</td>
+            <th scope="row">Происхождение зерна</th>
             <td>Бразилия</td>
           </tr>
           <tr>
-            <td>Вес</td>
+            <th scope="row">Вес</th>
             <td>250 г</td>
           </tr>
           <tr>
-            <td>Упаковка</td>
+            <th scope="row">Упаковка</th>
             <td>Пакет с клапаном</td>
           </tr>
         </tbody>
       </table></div>
+      <dl class="mobile-specs">
+        <div><dt>Категория</dt><dd>Кофе в зёрнах</dd></div>
+        <div><dt>Цена</dt><dd>1 000 ₽</dd></div>
+        <div><dt>Наличие</dt><dd>В наличии</dd></div>
+        <div><dt>Срок получения</dt><dd>1–3 дня</dd></div>
+        <div><dt>Обжарка</dt><dd>Средняя</dd></div>
+        <div><dt>Вид кофе</dt><dd>100% арабика</dd></div>
+        <div><dt>Происхождение зерна</dt><dd>Бразилия</dd></div>
+        <div><dt>Вес</dt><dd>250 г</dd></div>
+        <div><dt>Упаковка</dt><dd>Пакет с клапаном</dd></div>
+      </dl>
     </section>
 
     <!-- ========================================== -->
@@ -208,7 +235,7 @@
 
         <div class="product-column">
   <article class="product-card" data-category="ground" data-price="850" id="item-2">
-    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Эспрессо Бленд" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Эспрессо Бленд</h3>
     <p class="product-card__description">Молотый кофе для гейзерной кофеварки, 250 г.</p>
@@ -221,7 +248,7 @@
 
         <div class="product-column">
   <article class="product-card" data-category="makers" data-price="2490" id="item-3">
-    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Гейзерная кофеварка Moka" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Гейзерная кофеварка Moka</h3>
     <p class="product-card__description">Алюминиевая кофеварка на 3 порции.</p>
@@ -234,7 +261,7 @@
 
         <div class="product-column">
   <article class="product-card" data-category="grinders" data-price="3990" id="item-4">
-    <img class="product-card__image" src="images/roast-4.jpg" srcset="images/roast-4-252.jpg 252w, images/roast-4.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-4.jpg" srcset="images/roast-4-252.jpg 252w, images/roast-4.jpg 504w" sizes="(min-width: 1200px) 360px, (min-width: 1024px) 32vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Ручная кофемолка Mill" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Ручная кофемолка Mill</h3>
     <p class="product-card__description">Стальные жернова и регулировка помола.</p>

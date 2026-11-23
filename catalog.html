@@ -10,10 +10,12 @@
     <script src="js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <header class="site-header">
     <div class="site-header__inner">
       <div class="page-inner">
         <a class="site-header__logo" href="index.html">RoastLab</a>
+        <button class="button button--secondary site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Меню</button>
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -29,7 +31,7 @@
     </div>
   </header>
 
-    <main class="page">
+    <main id="main-content" tabindex="-1" class="page">
 
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a class="breadcrumbs__link" href="index.html">Главная</a>
@@ -47,6 +49,20 @@
                 <h2 class="catalog-filters__title">Фильтры</h2>
 
                 <form class="filters-form" action="#" method="get">
+                    <div>
+                        <label class="filters-form__label" for="catalog-query">Поиск по каталогу</label>
+                        <input class="filters-form__input" id="catalog-query" name="query" type="search" placeholder="Например, арабика">
+                    </div>
+                    <div>
+                        <label class="filters-form__label" for="catalog-sort">Сортировка</label>
+                        <select class="filters-form__input" id="catalog-sort" name="sort">
+                            <option value="default">По умолчанию</option>
+                            <option value="price-up">Сначала дешевле</option>
+                            <option value="price-down">Сначала дороже</option>
+                            <option value="name">По названию</option>
+                        </select>
+                    </div>
+                    <label class="choice-label"><input type="checkbox" name="favorites"> Только избранное</label>
 
                     <fieldset class="field">
         <legend class="field-title">Категория</legend>
@@ -77,45 +93,61 @@
                     <a href="category-coffee.html" class="button button--secondary">Смотреть кофе в зёрнах</a>
                 </div>
 
+                <div class="catalog-toolbar">
+                    <button class="button button--secondary" type="button" id="open-comparison" disabled>Сравнить (0/3)</button>
+                    <span id="catalog-actions-status" aria-live="polite"></span>
+                </div>
                 <p class="catalog-status" id="catalog-results" role="status"></p>
                 <div class="products-grid">
 
                     <!-- Товары 1, 2, 3 -->
                     <div class="product-column">
   <article class="product-card" data-category="beans" data-price="1000" id="item-1">
-    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Бразилия Серрадо" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title"><a href="product.html">Бразилия Серрадо</a></h3>
     <p class="product-card__description">Орехи, какао и мягкая сладость. Арабика в зёрнах, 250 г.</p>
     <p class="product-card__price">1 000 ₽</p>
     <a class="button button--secondary" href="product.html">Подробнее</a>
     <button class="button button--primary" type="button" data-product="Бразилия Серрадо">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="ground" data-price="850" id="item-2">
-    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Эспрессо Бленд" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Эспрессо Бленд</h3>
     <p class="product-card__description">Молотый кофе для гейзерной кофеварки, 250 г.</p>
     <p class="product-card__price">850 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Эспрессо Бленд">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="makers" data-price="2490" id="item-3">
-    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Гейзерная кофеварка Moka" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Гейзерная кофеварка Moka</h3>
     <p class="product-card__description">Алюминиевая кофеварка на 3 порции.</p>
     <p class="product-card__price">2 490 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Гейзерная кофеварка Moka">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -132,19 +164,27 @@
     <p class="product-card__price">3 990 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Ручная кофемолка Mill">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="makers" data-price="1790" id="item-5">
-    <img class="product-card__image" src="images/roast-5.jpg" srcset="images/roast-5-252.jpg 252w, images/roast-5.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-5.jpg" srcset="images/roast-5-252.jpg 252w, images/roast-5.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Френч-пресс Glass" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Френч-пресс Glass</h3>
     <p class="product-card__description">Термостойкое стекло, 600 мл.</p>
     <p class="product-card__price">1 790 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Френч-пресс Glass">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -160,19 +200,27 @@
     <p class="product-card__price">1 390 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Воронка Ceramic 02">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="beans" data-price="1190" id="item-7">
-    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Колумбия Уила" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Колумбия Уила</h3>
     <p class="product-card__description">Карамель и красное яблоко. Зёрна, 250 г.</p>
     <p class="product-card__price">1 190 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Колумбия Уила">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -188,19 +236,27 @@
     <p class="product-card__price">1 290 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Эфиопия Сидамо">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="ground" data-price="890" id="item-9">
-    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-2.jpg" srcset="images/roast-2-252.jpg 252w, images/roast-2.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Утренний фильтр" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Утренний фильтр</h3>
     <p class="product-card__description">Молотая арабика с нотами яблока, 250 г.</p>
     <p class="product-card__price">890 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Утренний фильтр">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -216,45 +272,61 @@
     <p class="product-card__price">940 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Шоколадный бленд">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="makers" data-price="3290" id="item-11">
-    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-3.jpg" srcset="images/roast-3-252.jpg 252w, images/roast-3.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Гейзерная кофеварка Moka XL" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Гейзерная кофеварка Moka XL</h3>
     <p class="product-card__description">Объём 300 мл, на 6 небольших порций.</p>
     <p class="product-card__price">3 290 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Гейзерная кофеварка Moka XL">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="grinders" data-price="2890" id="item-12">
-    <img class="product-card__image" src="images/roast-4.jpg" srcset="images/roast-4-252.jpg 252w, images/roast-4.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-4.jpg" srcset="images/roast-4-252.jpg 252w, images/roast-4.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Кофемолка Mill Compact" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Кофемолка Mill Compact</h3>
     <p class="product-card__description">Ручная модель с контейнером на 20 г.</p>
     <p class="product-card__price">2 890 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Кофемолка Mill Compact">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="makers" data-price="1290" id="item-13">
-    <img class="product-card__image" src="images/roast-5.jpg" srcset="images/roast-5-252.jpg 252w, images/roast-5.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-5.jpg" srcset="images/roast-5-252.jpg 252w, images/roast-5.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Френч-пресс Glass Mini" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Френч-пресс Glass Mini</h3>
     <p class="product-card__description">Стеклянная колба, 350 мл.</p>
     <p class="product-card__price">1 290 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Френч-пресс Glass Mini">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -270,32 +342,44 @@
     <p class="product-card__price">1 190 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Воронка Ceramic 01">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="beans" data-price="1240" id="item-15">
-    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Гватемала Антигуа" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Гватемала Антигуа</h3>
     <p class="product-card__description">Тёмный шоколад и слива. Зёрна, 250 г.</p>
     <p class="product-card__price">1 240 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Гватемала Антигуа">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="beans" data-price="1590" id="item-16">
-    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-1.jpg" srcset="images/roast-1-252.jpg 252w, images/roast-1.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Домашний эспрессо" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Домашний эспрессо</h3>
     <p class="product-card__description">Зерновая смесь для эспрессо и молочных напитков, 500 г.</p>
     <p class="product-card__price">1 590 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Домашний эспрессо">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -311,19 +395,27 @@
     <p class="product-card__price">1 390 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Декаф для фильтра">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
 
                     <div class="product-column">
   <article class="product-card" data-category="accessories" data-price="1890" id="item-18">
-    <img class="product-card__image" src="images/roast-6.jpg" srcset="images/roast-6-252.jpg 252w, images/roast-6.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="" width="504" height="333" loading="lazy">
+    <img class="product-card__image" src="images/roast-6.jpg" srcset="images/roast-6-252.jpg 252w, images/roast-6.jpg 504w" sizes="(min-width: 1200px) 286px, (min-width: 1024px) 34vw, (min-width: 640px) 47vw, calc(100vw - 64px)" alt="Набор для пуровера" width="504" height="333" loading="lazy">
     <div class="product-card__body">
 <h3 class="product-card__title">Набор для пуровера</h3>
     <p class="product-card__description">Керамическая воронка и 40 бумажных фильтров.</p>
     <p class="product-card__price">1 890 ₽</p>
 
     <button class="button button--primary" type="button" data-product="Набор для пуровера">Заказать</button>
+    <div class="product-tools">
+      <button class="button button--secondary" type="button" data-favorite aria-pressed="false">В избранное</button>
+      <button class="button button--secondary" type="button" data-compare aria-pressed="false">Сравнить</button>
+    </div>
     </div>
   </article>
 </div>
@@ -345,6 +437,13 @@
     <!-- ========================================== -->
     <!-- НОВОЕ УЛУЧШЕННОЕ МОДАЛЬНОЕ ОКНО              -->
     <!-- ========================================== -->
+    <dialog class="comparison-dialog" id="comparison-dialog" aria-labelledby="comparison-title">
+      <header class="comparison-dialog__header">
+        <h2 id="comparison-title">Сравнение товаров</h2>
+        <form method="dialog"><button class="button button--secondary">Закрыть</button></form>
+      </header>
+      <div class="comparison-grid" id="comparison-grid"></div>
+    </dialog>
     <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
           <div class="order-dialog__header">
             <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>

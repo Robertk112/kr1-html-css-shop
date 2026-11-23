@@ -13,10 +13,12 @@
   <script src="js/main.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <header class="site-header">
     <div class="site-header__inner">
       <div class="page-inner">
         <a class="site-header__logo" href="index.html">RoastLab</a>
+        <button class="button button--secondary site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Меню</button>
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -32,7 +34,7 @@
     </div>
   </header>
 
-  <main class="page">
+  <main id="main-content" tabindex="-1" class="page">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="muted">Заявка</span>
@@ -44,6 +46,7 @@
       <p>Заполните форму, чтобы оставить заявку на товар или получить консультацию.</p>
 
       <p class="success-message" id="success-message" role="alert" hidden>Данные проверены. Это демонстрационная заявка.</p>
+      <p class="catalog-status" id="order-estimate" role="status" hidden></p>
       <form id="order-form" class="order-form order-form--page" action="#" method="post" novalidate>
         <div class="field">
           <label class="order-form__label" for="order-product">Товар</label>

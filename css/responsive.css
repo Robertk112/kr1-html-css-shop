@@ -236,3 +236,36 @@ main > .page-inner,
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+.product-details__thumb {
+    width: 3.75rem;
+    height: 3.25rem;
+}
+
+.table-wrapper {
+    display: none;
+}
+
+.site-nav-toggle {
+    min-height: 44px;
+}
+
+@media (min-width: 640px) {
+    .comparison-grid {
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-specs {
+        display: none;
+    }
+
+    .table-wrapper {
+        display: block;
+    }
+
+    .product-table {
+        min-width: 0;
+    }
+}
